@@ -51,7 +51,7 @@ disableSerialization;
 		//
 		// 6 hour server restart time window
 		//
-		_time = (round(360-(serverTime)/60));
+		_time = (round(355-(serverTime)/60));
 
 		_hours = (floor(_time/60));
 		_minutes = (_time - (_hours * 60));

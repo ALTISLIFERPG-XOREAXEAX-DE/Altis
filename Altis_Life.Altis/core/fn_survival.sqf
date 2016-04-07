@@ -6,7 +6,7 @@
 	Description:
 	All survival? things merged into one thread.
 */
-private["_fnc_food","_fnc_water","_fnc_incremental_paycheck","_foodTime","_waterTime","_paycheckTime","_bp","_walkDis","_lastPos","_curPos","_currentIncrementalPaycheck"];
+private["_fnc_food","_fnc_water","_fnc_incremental_paycheck","_foodTime","_waterTime","_paycheckTime","_paycheckStartTime","_bp","_walkDis","_lastPos","_curPos","_currentIncrementalPaycheck"];
 
 _fnc_food =  {
 	if(life_hunger < 2) then {player setDamage 1; hint localize "STR_NOTF_EatMSG_Death";}
@@ -49,44 +49,46 @@ _fnc_water = {
 
 _fnc_incremental_paycheck = {
 	if (playerSide == civilian) then {
-		if (life_is_alive == true) then {
+		if ((life_hunger > 50) && (life_thirst > 50)) then {
+		
 			if ((life_atmbank + life_cash) < 200000) then {
-				_currentIncrementalPaycheck = (time - life_login_time) * 1.5;
+				_currentIncrementalPaycheck = (time - _paycheckStartTime) * 1.7;
 			};
 
 			if ((life_atmbank + life_cash) < 400000) then {
-				_currentIncrementalPaycheck = (timelife_is_alive - life_login_time) * 1.4;
+				_currentIncrementalPaycheck = (time - _paycheckStartTime) * 1.5;
 			};
 		
 			if ((life_atmbank + life_cash) < 600000) then {
-				_currentIncrementalPaycheck = (time - life_login_time) * 1.3;
+				_currentIncrementalPaycheck = (time - _paycheckStartTime) * 1.3;
 			};
 
 			if ((life_atmbank + life_cash) < 800000) then {
-				_currentIncrementalPaycheck = (time - life_login_time) * 1.2;
+				_currentIncrementalPaycheck = (time - _paycheckStartTime) * 1.1;
 			};
 		
 			if ((life_atmbank + life_cash) < 1000000) then {
-				_currentIncrementalPaycheck = (time - life_login_time) * 1.1;
+				_currentIncrementalPaycheck = (time - _paycheckStartTime) * 1;
 			};
 
 			if ((life_atmbank + life_cash) < 2000000) then {
-				_currentIncrementalPaycheck = (time - life_login_time) * 1;
+				_currentIncrementalPaycheck = (time - _paycheckStartTime) * 0.9;
 			};
 		
 			if ((life_atmbank + life_cash) < 4000000) then {
-				_currentIncrementalPaycheck = (time - life_login_time) * 0.9;
+				_currentIncrementalPaycheck = (time - _paycheckStartTime) * 0.7;
 			};
 		
 			if ((life_atmbank + life_cash) < 6000000) then {
-				_currentIncrementalPaycheck = (time - life_login_time) * 0.2;
+				_currentIncrementalPaycheck = (time - _paycheckStartTime) * 0.5;
 			} else {
-				_currentIncrementalPaycheck = (time - life_login_time) * 0.1;
+				_currentIncrementalPaycheck = (time - _paycheckStartTime) * 0.2;
 			};
 		
 			life_atmbank = life_atmbank + _currentIncrementalPaycheck;
 
 			systemChat format[localize "STR_FSM_ReceivedIncrementalPay",[_currentIncrementalPaycheck] call life_fnc_numberText];
+			
 		};
 	};
 };
@@ -95,6 +97,7 @@ _fnc_incremental_paycheck = {
 _foodTime = time;
 _waterTime = time;
 _paycheckTime = time;
+_paycheckStartTime = time;
 
 _walkDis = 0;
 _bp = "";
