@@ -16,6 +16,14 @@ class VirtualShops {
         items[] = { "waterBottle", "rabbit", "apple", "redgull", "tbacon", "lockpick", "pickaxe", "fuelFull", "peach", "boltcutter", "storagesmall", "storagebig", "rabbit_raw", "hen_raw", "rooster_raw", "sheep_raw", "goat_raw" };
     };
 
+	class pharmacy {
+        name = "STR_Shops_Pharmacy";
+        side = "civ";
+        license = "";
+        level[] = { "", "", -1, "" };
+        items[] = { "painkillers" };
+    };
+	
     class rebel {
         name = "STR_Shops_Rebel";
         side = "civ";
@@ -272,6 +280,17 @@ class VirtualItems {
         illegal = false;
         edible = -1;
         icon = "icons\ico_storageBig.paa";
+    };
+	
+	class painkillers {
+        variable = "painkillers";
+        displayName = "STR_Item_Painkillers";
+        weight = 1;
+        buyPrice = 550;
+        sellPrice = 400;
+        illegal = false;
+        edible = -1;
+        icon = "custom\icons\ico_painkillers.paa";
     };
 
     //Mined Items
