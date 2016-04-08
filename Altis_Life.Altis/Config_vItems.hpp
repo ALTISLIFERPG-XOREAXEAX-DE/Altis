@@ -143,6 +143,14 @@ class VirtualShops {
         level[] = { "", "", -1, "" };
         items[] = { "donuts", "coffee", "spikeStrip", "waterBottle", "rabbit", "apple", "redgull", "fuelFull", "defusekit" };
     };
+	
+    class med {
+        name = "STR_Shops_Med";
+        side = "med";
+        license = "";
+        level[] = { "", "", -1, "" };
+        items[] = { "waterBottle", "apple", "lockpick", "fuelFull", "peach", "rabbit_raw" };
+    };
 };
 
 /*

@@ -139,12 +139,16 @@
       <Polish>Skup materiałów przemysłowych</Polish>
     </Key>
     <Key ID="STR_Shops_Cop">
-      <Original>APD Item Shop</Original>
-      <German>APD Gegenstände</German>
+      <Original>APD Market</Original>
+      <German>APD Markt</German>
       <Italian>Negozio Polizia</Italian>
       <French>Equipement de Police</French>
       <Portuguese>Equipamentos da Polícia</Portuguese>
       <Polish>Zbrojownia Policji</Polish>
+    </Key>
+    <Key ID="STR_Shops_Med">
+      <Original>EMS Market</Original>
+      <German>EMS Markt</German>
     </Key>
     <Key ID="STR_Shops_Cement">
       <Original>Juan's Cement Laying</Original>
