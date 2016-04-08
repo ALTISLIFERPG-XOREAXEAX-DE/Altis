@@ -29,15 +29,11 @@ switch (true) do {
 	};
 
 	case (EQUAL(_item,"painkillers")): {
-		if(vehicle player != player) exitWith {};
-		
-		if(([false,_item,1] call life_fnc_handleInv)) then
-		{
-			player setDamage 0;
-			player setFatigue 0;
-			player allowDamage true;
-			player enableSimulation true;
-			closeDialog 0;
+		if(vehicle player == player) then {
+			if(([false,_item,1] call life_fnc_handleInv)) then {
+				player setDamage 0;
+				player setFatigue 0;
+			};
 		};
 	};
 	
