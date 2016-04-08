@@ -665,6 +665,9 @@ will modify the virtual space and the price of the vehicle, but other informatio
             } },
             { "EMS White", "med", {
                 "#(argb,8,8,3)color(1,1,1,0.8)"
+            } },
+            { "Notarzt", "med", {
+                "textures\air\med\m900\notarzt.paa"
             } }
         };
     };
