@@ -37,4 +37,5 @@ if(hasInterface)then {
 	
 	[] execVM "custom\scripts\statusbar.sqf";
 	[] execVM "custom\scripts\voiceControl.sqf";
+	[] execVM "custom\scripts\depleteVehicleFuel.sqf";
 };
