@@ -85,7 +85,8 @@ class CarShops {
         side = "med";
         vehicles[] = {
             { "C_Offroad_01_F", { "", "", -1 } },
-			{ "C_SUV_01_F", { "life_mediclevel", "SCALAR", 3 } }
+			{ "C_SUV_01_F", { "life_mediclevel", "SCALAR", 3 } },
+			{ "B_MRAP_01_F", { "life_mediclevel", "SCALAR", 4 } }
         };
     };
 
@@ -591,12 +592,16 @@ will modify the virtual space and the price of the vehicle, but other informatio
     class B_MRAP_01_F {
         vItemSpace = 65;
         licenses[] = { {""}, {""}, {""}, {""} };
-        rentalprice[] = { -1, 30000, -1, -1 };
+        rentalprice[] = { 30000, 30000, 30000, 30000 };
         textures[] = {
             { "Black", "cop", {
                 "#(argb,8,8,3)color(0.05,0.05,0.05,1)",
                 "#(argb,8,8,3)color(0.05,0.05,0.05,1)"
-            } }
+            } },
+            { "Notarzt", "med", {
+                "textures\vehicles\med\hunter\notarzt_front.paa",
+                "textures\vehicles\med\hunter\notarzt_hinten.paa"
+            } },			
         };
     };
 
