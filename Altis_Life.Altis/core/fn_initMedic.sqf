@@ -45,21 +45,6 @@ if(EQUAL(LIFE_SETTINGS(getNumber,"allow_medic_weapons"),0)) then
 		waitUntil {sleep 3; vehicle player != player};
 		player switchCamera "Internal";
 
-		//
-		// vehicle cargo for medics
-		//
-		clearItemCargoGlobal vehicle player;
-		clearBackpackCargoGlobal vehicle player;
-
-		vehicle player addItemCargoGlobal ["Medikit", 1];
-		vehicle player addItemCargoGlobal ["ToolKit", 5];
-		vehicle player addItemCargoGlobal ["NVGoggles", 1];
-		vehicle player addItemCargoGlobal ["ItemGPS", 1];
-		vehicle player addItemCargoGlobal ["FirstAidKit", 5];
-
-		vehicle player addBackpackCargoGlobal ["B_Kitbag_cbr", 1];
-		vehicle player addBackpackCargoGlobal ["B_Carryall_oucamo", 1];
-
 		waitUntil {sleep 3; vehicle player == player};
 		player switchCamera "External";
 	};

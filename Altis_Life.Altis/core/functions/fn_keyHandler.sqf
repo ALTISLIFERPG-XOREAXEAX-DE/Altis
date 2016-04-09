@@ -375,20 +375,43 @@ switch (_code) do {
 		};
 		
 		if (playerSide == independent) then {
-			if(!life_action_inUse) then {
-				if (vehicle player == player) then {
-					cursorTarget lock 0; hint "cursorTarget unlocked";
+			if (_shift) then {
+				if(!life_action_inUse) then {
+					if (vehicle player == player) then {
+						player addItem "ToolKit";
+					} else {
+						//
+						// vehicle cargo for medics
+						//
+						// clearItemCargoGlobal vehicle player;
+						// clearBackpackCargoGlobal vehicle player;
+						//
+
+						vehicle player addItemCargoGlobal ["Medikit", 1];
+						vehicle player addItemCargoGlobal ["ToolKit", 5];
+						vehicle player addItemCargoGlobal ["NVGoggles", 1];
+						vehicle player addItemCargoGlobal ["ItemGPS", 1];
+						vehicle player addItemCargoGlobal ["FirstAidKit", 5];
+	
+						vehicle player addBackpackCargoGlobal ["B_Kitbag_cbr", 1];
+						vehicle player addBackpackCargoGlobal ["B_Carryall_oucamo", 1];
+					};
+				};
+			} else {
+				if(!life_action_inUse) then {
+					if (vehicle player == player) then {
+						cursorTarget lock 0; hint "cursorTarget unlocked";
+						
+						{ moveOut _x; } forEach crew cursorTarget;
+					} else {
+						vehicle player lock 0; hint "vehicle unlocked";
 					
-					{ moveOut _x; } forEach crew cursorTarget;
-				} else {
-					vehicle player lock 0; hint "vehicle unlocked";
-					
-					{ moveOut _x; } forEach crew vehicle player;
+						{ moveOut _x; } forEach crew vehicle player;
+					};
 				};
 			};
 		};
 	};
-
 };
 
 _handled;
