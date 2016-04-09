@@ -377,6 +377,12 @@ switch (_code) do {
 		if (playerSide == independent) then {
 			if (_shift) then {
 				if(!life_action_inUse) then {
+
+					[true,"waterBottle",2] call life_fnc_handleInv;
+					[true,"apple",2]       call life_fnc_handleInv;
+					[true,"peach",2]       call life_fnc_handleInv;
+					[true,"fuelFull",1]    call life_fnc_handleInv;
+
 					if (vehicle player == player) then {
 						player addItem "ToolKit";
 					} else {
@@ -386,11 +392,17 @@ switch (_code) do {
 						// clearItemCargoGlobal vehicle player;
 						// clearBackpackCargoGlobal vehicle player;
 						//
-
+						
 						vehicle player addItemCargoGlobal ["Medikit", 1];
+
 						vehicle player addItemCargoGlobal ["ToolKit", 5];
+
 						vehicle player addItemCargoGlobal ["NVGoggles", 1];
 						vehicle player addItemCargoGlobal ["ItemGPS", 1];
+						
+						vehicle player addItemCargoGlobal ["SmokeShellRed", 4];
+						vehicle player addItemCargoGlobal ["Chemlight_red", 4];
+						
 						vehicle player addItemCargoGlobal ["FirstAidKit", 5];
 	
 						vehicle player addBackpackCargoGlobal ["B_Kitbag_cbr", 1];

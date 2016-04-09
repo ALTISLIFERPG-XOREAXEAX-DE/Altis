@@ -19,13 +19,7 @@ class Clothing {
         side = "civ";
         uniforms[] = {
             { "NONE", "Remove Uniform", 0, { "", "", -1 } },
-            { "U_C_Poloshirt_stripped", "Poloshirt stripped", 125, { "", "", -1 } },
-            { "U_C_Poloshirt_redwhite", "Poloshirt Red/White", 150, { "", "", -1 } },
-            { "U_C_Poloshirt_salmon", "Poloshirt Salmon", 175, { "", "", -1 } },
-            { "U_C_Poloshirt_blue", "Poloshirt Blue", 250, { "", "", -1 } },
             { "U_C_Poor_2", "Rag tagged clothes", 250, { "", "", -1 } },
-            { "U_C_Poloshirt_burgundy", "Poloshirt Burgundy", 275, { "", "", -1 } },
-            { "U_C_Poloshirt_tricolour", "Poloshirt Tricolor", 350, { "", "", -1 } },
             { "U_IG_Guerilla2_2", "Green stripped shirt & Pants", 650, { "", "", -1 } },
             { "U_IG_Guerilla3_1", "Brown Jacket & Pants", 735, { "", "", -1 } },
             { "U_OrestesBody", "Surfing On Land", 1100, { "", "", -1 } },
@@ -126,7 +120,8 @@ class Clothing {
             { "NONE", "Remove Hat", 0, { "", "", -1 } },
             { "H_HelmetB_plain_mcamo", "", 75, { "life_coplevel", "SCALAR", 1 } },
             { "H_MilCap_mcamo", "", 100, { "life_coplevel", "SCALAR", 2 } },
-            { "H_Booniehat_mcamo", "", 120, { "life_coplevel", "SCALAR", 1 } }
+            { "H_Booniehat_mcamo", "", 120, { "life_coplevel", "SCALAR", 1 } },
+			{ "H_Beret_blk_POLICE", "", 100, { "life_coplevel", "SCALAR", 3 } }
         };
         goggles[] = {
             { "NONE", "Remove Glasses", 0, { "", "", -1 } },
