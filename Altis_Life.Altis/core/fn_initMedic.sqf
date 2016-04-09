@@ -46,33 +46,20 @@ if(EQUAL(LIFE_SETTINGS(getNumber,"allow_medic_weapons"),0)) then
 		player switchCamera "Internal";
 
 		//
-		// vitems
-		//
-		[true,"waterBottle",2] call life_fnc_handleInv;
-		[true,"apple",2]       call life_fnc_handleInv;
-		[true,"peach",2]       call life_fnc_handleInv;
-		[true,"fuelFull",1]    call life_fnc_handleInv;
-		
-		//
 		// vehicle cargo for medics
 		//
 		clearItemCargoGlobal vehicle player;
-		
+		clearBackpackCargoGlobal vehicle player;
+
 		vehicle player addItemCargoGlobal ["Medikit", 1];
 		vehicle player addItemCargoGlobal ["ToolKit", 5];
-		
 		vehicle player addItemCargoGlobal ["NVGoggles", 1];
-
 		vehicle player addItemCargoGlobal ["ItemGPS", 1];
-		
-		vehicle player addItemCargoGlobal ["Chemlight_red", 4];
-		vehicle player addItemCargoGlobal ["SmokeShellRed", 4];
-		
+		vehicle player addItemCargoGlobal ["FirstAidKit", 5];
+
 		vehicle player addBackpackCargoGlobal ["B_Kitbag_cbr", 1];
 		vehicle player addBackpackCargoGlobal ["B_Carryall_oucamo", 1];
 
-		vehicle player addItemCargoGlobal ["FirstAidKit", 5];
-		
 		waitUntil {sleep 3; vehicle player == player};
 		player switchCamera "External";
 	};
