@@ -85,17 +85,15 @@ class CarShops {
         side = "med";
         vehicles[] = {
             { "C_Offroad_01_F", { "", "", -1 } },
-            { "I_Truck_02_medical_F", { "", "", -1 } },
-            { "O_Truck_03_medical_F", { "", "", -1 } },
-            { "B_Truck_01_medical_F", { "", "", -1 } }
+			{ "C_SUV_01_F", { "life_mediclevel", "SCALAR", 3 } }
         };
     };
 
     class med_air_hs {
         side = "med";
         vehicles[] = {
-            { "B_Heli_Light_01_F", { "", "", -1 } },
-            { "O_Heli_Light_02_unarmed_F", { "", "", -1 } }
+            { "B_Heli_Light_01_F", { "life_mediclevel", "SCALAR", 3 } },
+            { "O_Heli_Light_02_unarmed_F", { "life_mediclevel", "SCALAR", 4 } }
         };
     };
 
@@ -492,7 +490,7 @@ will modify the virtual space and the price of the vehicle, but other informatio
 	class SUV_01_base_black_F {
         vItemSpace = 100;
         licenses[] = { {"driver"}, {""}, {""}, {""} };
-        rentalprice[] = { 30000, 20000, -1, -1 };
+        rentalprice[] = { 30000, 30000, 30000, 30000 };
         textures[] = {
             { "Admin", "civ", {
                 "textures\vehicles\civ\suv\admin.jpg"
@@ -503,7 +501,7 @@ will modify the virtual space and the price of the vehicle, but other informatio
     class C_SUV_01_F {
         vItemSpace = 50;
         licenses[] = { {"driver"}, {""}, {""}, {""} };
-        rentalprice[] = { 30000, 20000, -1, -1 };
+        rentalprice[] = { 30000, 20000, 10000, 5000 };
         textures[] = {
             { "Dark Red", "civ", {
                 "\a3\soft_f_gamma\SUV_01\Data\suv_01_ext_co.paa"
