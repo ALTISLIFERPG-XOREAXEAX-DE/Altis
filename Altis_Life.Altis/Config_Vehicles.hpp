@@ -332,6 +332,9 @@ class LifeCfgVehicles {
             } },
             { "Police", "cop", {
                 "#(ai,64,64,1)Fresnel(1.3,7)"
+            } },
+            { "Polizei", "cop", {
+                "textures\vehicles\cop\offroad\polizei.paa"
             } }
         };
     };

@@ -112,9 +112,8 @@ class Clothing {
         uniforms[] = {
             { "NONE", "Remove Uniform", 0, { "", "", -1 } },
             { "U_Rangemaster", "Cop Uniform", 25, { "", "", -1 } },
-            { "U_B_CombatUniform_mcam_tshirt", "", 350, { "life_coplevel", "SCALAR", 1 } },
-            { "U_B_CombatUniform_mcam_worn", "", 550, { "life_coplevel", "SCALAR", 2 } },
-            { "U_B_survival_uniform", "", 1250, { "life_coplevel", "SCALAR", 1 } }
+            { "U_B_CombatUniform_mcam_tshirt", "SEK T-Shirt", 350, { "life_coplevel", "SCALAR", 1 } },
+            { "U_B_CombatUniform_mcam_worn", "SEK Kampfanzug", 550, { "life_coplevel", "SCALAR", 2 } }
         };
         headgear[] = {
             { "NONE", "Remove Hat", 0, { "", "", -1 } },
@@ -141,8 +140,9 @@ class Clothing {
         };
         vests[] = {
             { "NONE", "Remove Vest", 0, { "", "", -1 } },
-            { "V_Rangemaster_belt", "", 800, { "", "", -1 } },
-            { "V_PlateCarrier2_rgr", "", 1500, { "life_coplevel", "SCALAR", 1 } }
+            { "V_Rangemaster_belt", "", 800, { "", "", 1 } },
+			{ "V_TacVest_blk_POLICE", "", 1600, { "", "", 1 } }
+			
         };
         backpacks[] = {
             { "NONE", "Remove Backpack", 0, { "", "", -1 } },

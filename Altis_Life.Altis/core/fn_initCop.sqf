@@ -21,6 +21,39 @@ if((FETCH_CONST(life_coplevel) == 0) && (FETCH_CONST(life_adminlevel) == 0)) the
 	sleep 35;
 };
 
+//
+// backpack texture
+//
+[] spawn {
+	while {true} do {
+		waitUntil {backpack player == "B_Kitbag_cbr"};
+		(unitBackpack player) setObjectTextureGlobal [0, "textures\clothing\cop\backpack_police_2.paa"];
+		waitUntil {backpack player != "B_Kitbag_cbr"};
+	};
+};
+
+//
+// SEK
+//
+[] spawn {
+	while {true} do {
+		waitUntil {uniform player == "U_B_CombatUniform_mcam_worn"};
+		player setObjectTextureGlobal [0, "textures\clothing\cop\SEK.jpg"];
+		waitUntil {uniform player != "U_B_CombatUniform_mcam_worn"};
+	};
+};
+
+//
+// SEK
+//
+[] spawn {
+	while {true} do {
+		waitUntil {uniform player == "U_B_CombatUniform_mcam_tshirt"};
+		player setObjectTextureGlobal [0, "textures\clothing\cop\SEK.jpg"];
+		waitUntil {uniform player != "U_B_CombatUniform_mcam_tshirt"};
+	};
+};
+
 player setVariable["rank",(FETCH_CONST(life_coplevel)),true];
 [] call life_fnc_spawnMenu;
 waitUntil{!isNull (findDisplay 38500)}; //Wait for the spawn selection to be open.
