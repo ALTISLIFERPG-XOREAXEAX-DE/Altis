@@ -102,18 +102,18 @@ class CarShops {
         side = "cop";
         vehicles[] = {
             { "C_Offroad_01_F", { "", "", -1 } },
-            { "C_SUV_01_F", { "", "", -1 } },
-            { "C_Hatchback_01_sport_F", { "life_coplevel", "SCALAR", 1 } },
-            { "B_MRAP_01_F", { "life_coplevel", "SCALAR", 2 } },
-            { "B_MRAP_01_hmg_F", { "life_coplevel", "SCALAR", 3 } }
+            { "C_SUV_01_F", { "life_coplevel", "SCALAR", 2 } },
+            { "C_Hatchback_01_sport_F", { "life_coplevel", "SCALAR", 3 } },
+            { "B_MRAP_01_F", { "life_coplevel", "SCALAR", 5 } },
+            { "B_MRAP_01_hmg_F", { "life_coplevel", "SCALAR", 6 } }
         };
     };
 
     class cop_air {
         side = "cop";
         vehicles[] = {
-            { "B_Heli_Light_01_F", { "", "", -1 } },
-            { "B_Heli_Transport_01_F", { "life_coplevel", "SCALAR", 3 } }
+            { "B_Heli_Light_01_F", { "life_coplevel", "SCALAR", 2 } },
+            { "B_Heli_Transport_01_F", { "life_coplevel", "SCALAR", 4 } }
         };
     };
 
@@ -383,7 +383,10 @@ will modify the virtual space and the price of the vehicle, but other informatio
             } },
             { "Police", "cop", {
                 "#(ai,64,64,1)Fresnel(1.3,7)"
-            } }
+            } },
+            { "Polizei", "cop", {
+                "textures\vehicles\cop\hatchback\polizei.jpg"
+            } }			
         };
     };
 
@@ -604,7 +607,11 @@ will modify the virtual space and the price of the vehicle, but other informatio
             { "Notarzt", "med", {
                 "textures\vehicles\med\hunter\notarzt_front.paa",
                 "textures\vehicles\med\hunter\notarzt_hinten.paa"
-            } },			
+            } },
+            { "SEK", "cop", {
+                "textures\vehicles\cop\hunter\sek_front.paa",
+                "textures\vehicles\cop\hunter\sek_hinten.paa"
+            } }
         };
     };
 
@@ -674,6 +681,9 @@ will modify the virtual space and the price of the vehicle, but other informatio
             } },
             { "Notarzt", "med", {
                 "textures\air\med\m900\notarzt.paa"
+            } },
+            { "SEK", "cop", {
+                "textures\air\cop\m900\sek.jpg"
             } }
         };
     };
