@@ -584,7 +584,10 @@ will modify the virtual space and the price of the vehicle, but other informatio
             } },
             { "Kimono", "civ", {
                 "textures\vehicles\civ\suv\kimono.jpg"
-            } }
+            } },
+            { "Warframe", "civ", {
+                "textures\vehicles\civ\suv\warframe.jpg"
+            } }			
         };
     };
 

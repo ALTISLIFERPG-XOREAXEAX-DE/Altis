@@ -109,9 +109,11 @@ while {true} do {
 	/* Incremental paycheck */
 	if((time - _paycheckTime) > 600) then {[] call _fnc_incremental_paycheck; _paycheckTime = time;};
 
-	/* Thirst / Hunger adjustment that is time based */
-	if((time - _waterTime) > 600) then {[] call _fnc_water; _waterTime = time;};
-	if((time - _foodTime) > 850) then {[] call _fnc_food; _foodTime = time;};
+	if ((FETCH_CONST(life_adminlevel)) < 2) then {
+		/* Thirst / Hunger adjustment that is time based */
+		if((time - _waterTime) > 600) then {[] call _fnc_water; _waterTime = time;};
+		if((time - _foodTime) > 850) then {[] call _fnc_food; _foodTime = time;};
+	};
 	
 	/* Adjustment of carrying capacity based on backpack changes */
 	if(EQUAL(backpack player,"")) then {
