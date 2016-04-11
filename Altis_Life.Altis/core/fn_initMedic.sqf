@@ -30,12 +30,13 @@ if(EQUAL(LIFE_SETTINGS(getNumber,"allow_medic_weapons"),0)) then
 //
 // disable Autohover for medics
 //
-["disableAutohover", "onEachFrame", {
-	_vehicle = vehicle player;
-	if(isAutoHoverOn _vehicle) then {
-		player action ["autoHoverCancel", _vehicle];
-	}
-}] call BIS_fnc_addStackedEventHandler;
+//["disableAutohover", "onEachFrame", {
+//	_vehicle = vehicle player;
+//	if(isAutoHoverOn _vehicle) then {
+//		player action ["autoHoverCancel", _vehicle];
+//	}
+//}] call BIS_fnc_addStackedEventHandler;
+//
 
 //
 // disable third person for medics in cars, switch to 3rd person when getting out of car
@@ -53,13 +54,25 @@ if(EQUAL(LIFE_SETTINGS(getNumber,"allow_medic_weapons"),0)) then
 //
 // backpack texture
 //
-[] spawn {
-	while {true} do {
-		waitUntil {backpack player == "B_Kitbag_cbr"};
-		(unitBackpack player) setObjectTextureGlobal [0, "textures\clothing\med\medic_backpack1.jpg"];
-		waitUntil {backpack player != "B_Kitbag_cbr"};
+if (FETCH_CONST(life_adminlevel) == 0) then {
+	[] spawn {
+		while {true} do {
+			waitUntil {backpack player == "B_Kitbag_cbr"};
+			(unitBackpack player) setObjectTextureGlobal [0, "textures\clothing\med\medic_backpack1.jpg"];
+			waitUntil {backpack player != "B_Kitbag_cbr"};
+		};
+	};
+} else {
+	[] spawn {
+		while {true} do {
+			waitUntil {backpack player == "B_Carryall_oucamo"};
+			(unitBackpack player) setObjectTextureGlobal [0, "#(rgb,8,8,3)color(1,1,1,1)"];
+			waitUntil {backpack player != "B_Carryall_oucamo"};
+		};
 	};
 };
+
+[] execVM "IgiLoad\IgiLoadInit.sqf";
 
 [] call life_fnc_spawnMenu;
 waitUntil{!isNull (findDisplay 38500)}; //Wait for the spawn selection to be open.

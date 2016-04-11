@@ -57,7 +57,9 @@ class CarShops {
         vehicles[] = {
             { "C_Heli_Light_01_civil_F", { "", "", -1 } },
             { "B_Heli_Light_01_F", { "", "", -1 } },
-            { "O_Heli_Light_02_unarmed_F", { "", "", -1 } }
+            { "O_Heli_Light_02_unarmed_F", { "", "", -1 } },
+			{ "I_Heli_Transport_02_F", { "", "", -1 } },
+			{ "B_Heli_Transport_03_unarmed_F", { "", "", -1 } }
         };
     };
 
@@ -86,7 +88,9 @@ class CarShops {
         vehicles[] = {
             { "C_Offroad_01_F", { "", "", -1 } },
 			{ "C_SUV_01_F", { "life_mediclevel", "SCALAR", 3 } },
-			{ "B_MRAP_01_F", { "life_mediclevel", "SCALAR", 4 } }
+			{ "B_MRAP_01_F", { "life_mediclevel", "SCALAR", 4 } },
+			{ "B_Truck_01_mover_F", { "life_mediclevel", "SCALAR", 4 } } // Abschleppfahrzeug Igiload
+			
         };
     };
 
@@ -94,7 +98,9 @@ class CarShops {
         side = "med";
         vehicles[] = {
             { "B_Heli_Light_01_F", { "life_mediclevel", "SCALAR", 3 } },
-            { "O_Heli_Light_02_unarmed_F", { "life_mediclevel", "SCALAR", 4 } }
+            { "O_Heli_Light_02_unarmed_F", { "life_mediclevel", "SCALAR", 4 } },
+			{ "I_Heli_Transport_02_F", { "life_mediclevel", "SCALAR", 4 } },
+			{ "B_Heli_Transport_03_unarmed_F", { "life_mediclevel", "SCALAR", 4 } }
         };
     };
 
@@ -113,7 +119,9 @@ class CarShops {
         side = "cop";
         vehicles[] = {
             { "B_Heli_Light_01_F", { "life_coplevel", "SCALAR", 2 } },
-            { "B_Heli_Transport_01_F", { "life_coplevel", "SCALAR", 4 } }
+            { "B_Heli_Transport_01_F", { "life_coplevel", "SCALAR", 4 } },
+			{ "I_Heli_Transport_02_F", { "life_mediclevel", "SCALAR", 5 } },
+			{ "B_Heli_Transport_03_unarmed_F", { "life_mediclevel", "SCALAR", 5 } }
         };
     };
 
@@ -173,6 +181,19 @@ class LifeCfgVehicles {
         textures[] = {};
     };
 
+    class B_Truck_01_mover_F {
+        vItemSpace = 250;
+        licenses[] = { {""}, {""}, {""}, {""} };
+        rentalprice[] = { -1, -1, 60000, -1 };		
+        textures[] = {
+			{ "Havarie", "med", {
+                "\a3\soft_f_beta\truck_01\data\truck_01_ext_01_co.paa",
+                "#(argb,8,8,3)color(1,1,0.05,1)",
+				"#(argb,8,8,3)color(1,0,0.05,1)"
+            } }
+		};
+    };
+	
     class C_Rubberboat {
         vItemSpace = 45;
         licenses[] = { {"boat"}, {""}, {""}, {""} };
@@ -695,8 +716,8 @@ will modify the virtual space and the price of the vehicle, but other informatio
 
     class O_Heli_Light_02_unarmed_F {
         vItemSpace = 210;
-        licenses[] = { {"pilot" }, {""}, {"mAir"}, {""} };
-        rentalprice[] = { 750000, -1, 75000, -1 };
+        licenses[] = { {"pilot" }, {"cAir"}, {"mAir"}, {""} };
+        rentalprice[] = { 750000, 75000, 75000, -1 };
         textures[] = {
             { "Black", "cop", {
                 "\a3\air_f\Heli_Light_02\Data\heli_light_02_ext_co.paa"
@@ -715,7 +736,43 @@ will modify the virtual space and the price of the vehicle, but other informatio
             } }
         };
     };
-
+	
+    class I_Heli_Transport_02_F	{
+        vItemSpace = 300;
+        licenses[] = { {"pilot" }, {"cAir"}, {"mAir"}, {""} };
+        rentalprice[] = { 1000000, 100000, 100000, -1 };
+        textures[] = {
+            { "Black", "cop", {
+                "#(argb,8,8,3)color(0,0,0,0.8)",
+				"#(argb,8,8,3)color(0,0,0,0.8)",
+				"#(argb,8,8,3)color(0,0,0,0.8)"
+            } },
+            { "EMS White", "med", {
+                "#(argb,8,8,3)color(1,1,1,0.8)",
+				"#(argb,8,8,3)color(1,1,1,0.8)",
+				"#(argb,8,8,3)color(1,1,1,0.8)"
+            } }
+        };
+    };
+	
+    class B_Heli_Transport_03_unarmed_F	{
+        vItemSpace = 500;
+        licenses[] = { {"pilot" }, {"cAir"}, {"mAir"}, {""} };
+        rentalprice[] = { 1500000, 150000, 150000, -1 };
+        textures[] = {
+            { "Black", "cop", {
+                "#(argb,8,8,3)color(0,0,0,0.8)",
+				"#(argb,8,8,3)color(0,0,0,0.8)",
+				"#(argb,8,8,3)color(0,0,0,0.8)"
+            } },
+            { "EMS White", "med", {
+                "#(argb,8,8,3)color(1,1,1,0.8)",
+				"#(argb,8,8,3)color(1,1,1,0.8)",
+				"#(argb,8,8,3)color(1,1,1,0.8)"
+            } }
+        };
+    };
+	
     class B_SDV_01_F {
         vItemSpace = 50;
         licenses[] = { {"boat"}, {"cg"}, {""}, {""} };
