@@ -72,16 +72,23 @@ class WeaponShops {
             { "hgun_Rook40_F", "", 1500, 500 },
             { "hgun_Pistol_heavy_02_F", "", 2500, -1 },
             { "hgun_ACPC2_F", "", 4500, -1 },
-            { "hgun_PDW2000_F", "", 9500, -1 }
+            { "hgun_PDW2000_F", "", 9500, -1 },
+			{ "arifle_MXM_Black_F", "MXM Black", 90000, 5000 },
+			{ "arifle_MXM_DMS_F", "MXM DMS", 101000, 5000 },
+			{ "arifle_MXM_RCO_pointer_snds_F", "MXM RCO SD", 120000, 5000 },
+			{ "arifle_MXM_SOS_pointer_F", "MXM MOS", 150000, 5000 }
         };
         mags[] = {
             { "16Rnd_9x21_Mag", "", 25 },
             { "6Rnd_45ACP_Cylinder", "", 50 },
             { "9Rnd_45ACP_Mag", "", 45 },
-            { "30Rnd_9x21_Mag", "", 75 }
+            { "30Rnd_9x21_Mag", "", 75 },
+            { "30Rnd_65x39_caseless_mag", "", 100, -1 },
+			{ "30Rnd_65x39_caseless_mag_Tracer", "", 100, -1 }
         };
         accs[] = {
-            { "optic_ACO_grn_smg", "", 950 }
+            { "optic_ACO_grn_smg", "", 950 },
+			{ "optic_KHS_hex", "", 20000 }
         };
     };
 
@@ -134,7 +141,7 @@ class WeaponShops {
 
     //Cop Shops
     class cop_basic {
-        name = "Altis Cop Shop";
+        name = "Polizeidienst";
         side = "cop";
         license = "";
         level[] = { "", "", -1, "" };
@@ -158,10 +165,10 @@ class WeaponShops {
     };
 
     class cop_patrol {
-        name = "Altis Patrol Officer Shop";
+        name = "Wachtmeister";
         side = "cop";
         license = "";
-        level[] = { "life_coplevel", "SCALAR", 2, "You must be a Patrol Officer Rank!" };
+        level[] = { "life_coplevel", "SCALAR", 2, "Du bist kein Wachtmeister!" };
         items[] = {
             { "arifle_MX_Black_F", "", 35000, 7500 },
             { "SMG_02_ACO_F", "", 30000, -1 },
@@ -185,14 +192,18 @@ class WeaponShops {
     };
 
     class cop_sergeant {
-        name = "Altis Sergeant Officer Shop";
+        name = "Kommissar";
         side = "cop";
         license = "";
-        level[] = { "life_coplevel", "SCALAR", 3, "You must be a Sergeant Rank!" };
+        level[] = { "life_coplevel", "SCALAR", 4, "Du bist kein Kommissar!" };
         items[] = {
             { "hgun_ACPC2_F", "", 17500, -1 },
             { "SMG_02_ACO_F", "", 15000, -1 },
-            { "arifle_MXC_Black_F", "", 30000, 5000 },
+            { "arifle_MXC_Black_F", "MXC Black", 30000, 5000 },
+			{ "arifle_MXM_Black_F", "MXM Black", 45000, 5000 },
+			{ "arifle_MXM_DMS_F", "MXM DMS", 60000, 5000 },
+			{ "arifle_MXM_RCO_pointer_snds_F", "MXM RCO SD", 75000, 5000 },
+			{ "arifle_MXM_SOS_pointer_F", "MXM MOS", 90000, 5000 },			
             { "HandGrenade_Stone", "Flashbang", 1700, -1 },
             { "optic_Arco", "", 2500, -1 },
             { "muzzle_snds_H", "", 2750, -1 }
@@ -200,11 +211,13 @@ class WeaponShops {
         mags[] = {
             { "9Rnd_45ACP_Mag", "", 200 },
             { "30Rnd_9x21_Mag", "", 60 },
-            { "30Rnd_65x39_caseless_mag", "", 100, -1 }
+            { "30Rnd_65x39_caseless_mag", "", 100, -1 },
+			{ "30Rnd_65x39_caseless_mag_Tracer", "", 100, -1 }
         };
         accs[] = {
             { "optic_Arco", "", 2500 },
-            { "muzzle_snds_H", "", 2750 }
+            { "muzzle_snds_H", "", 2750 },
+			{ "optic_KHS_blk", "", 10000 }
         };
     };
 

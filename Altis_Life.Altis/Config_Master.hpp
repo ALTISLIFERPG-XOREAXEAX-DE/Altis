@@ -139,7 +139,7 @@ class Life_Settings {
 
     /* Fuel Station & Heli Service settings */
     Pump_service = true; //Allow users to use pump service on the map. Default = false
-    fuel_cost = 40; //Cost of fuel per liter at fuel stations (if not defined for the vehicle already).
+    fuel_cost = 23; //Cost of fuel per liter at fuel stations (if not defined for the vehicle already).
     service_chopper = 1000; //Cost to service chopper at chopper service station.
 
     /* Skins settings */
