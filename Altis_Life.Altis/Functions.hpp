@@ -209,6 +209,8 @@ class Life_Client_Core
 		class hideObj {};
 		class autoSave {};
 		class introCam {};
+		class ConsumeWeed {};
+		class ConsumeCocaine {};
 	};
 
 	class Network

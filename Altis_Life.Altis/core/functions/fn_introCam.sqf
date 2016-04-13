@@ -1,41 +1,43 @@
-/*
-	File: IntroCam
-	Author: DeadP4xel (for SealDrop.de)
-*/
-private ["_camera", "_camDistance","_randCamX","_randCamY","_camTime"];
-_camDistance = 1000;
-_randCamX = 75 - floor(random 150);
-_randCamY = 75 - floor(random 150);
 
-// the one below basically says that if you already joined the server once the time of the camera movement will be faster, else it might get annoying
+//
+// Intro
+//
 
-if(!life_firstSpawn) then {
-	_camTime = 10;
-} else {
-	_camTime = 5;
-};
+waitUntil { alive player };
+player allowDamage false;
 
-//intro move
+_camera = "camera" camCreate [0,0,0];
+_camera CameraEffect ["internal","back"];
+_camera CamCommitPrepared 0;
+
+_camera camPrepareTarget [5789.28,-83292.53,-25736.98];
+_camera camPreparePos [3642.66,13284.80,48.97];
+_camera camPrepareFOV 0.700;
+_camera camCommitPrepared 0;
+
+titleText ["","Black IN",4];
+
 playSound ["welcome",false];
-showCinemaBorder true;
-camUseNVG false;
 
-_camera = "camera" camCreate [(position player select 0)+_randCamX, (position player select 1)+_randCamY,(position player select 2)+_camDistance];
-_camera cameraEffect ["internal","back"];
+any=[
+	[
+		["Willkommen auf unserem ArmaLife Server!","<t align = 'center' size = '0.7'>%1</t><br/>"],
+		["# XOR $EAX,$EAX","<t align = 'center' size = '1'>%1</t><br/>"],
+		["Server Restarts: 04:00, 10:00, 16:00, 22:00 Uhr","<t align = 'center' size = '0.7'>%1</t><br/>"]
+	]
+] spawn BIS_fnc_typeText;
 
-_camera camSetFOV 0.7;
-_camera camCommit 0;
+sleep 16;
+titleText ["","black out",3];
 waitUntil {camCommitted _camera};
 
-_camera camSetTarget vehicle player;
-_camera camSetRelPos [0,0,2];
-_camera camCommit _camTime;
-
-waitUntil {camCommitted _camera};
-
+sleep 5;
+titleText ["","Black IN",4];
 _camera cameraEffect ["terminate","back"];
 camDestroy _camera;
-life_firstSpawn = false;
+
+player allowDamage true;
+sleep 0;
 
 //
 // Text Intro
@@ -43,8 +45,8 @@ life_firstSpawn = false;
 
 _onScreenTime = 3;
 
-_role1 = "Welcome to altislife.xoreaxeax.de"; //In Rot
-_role1names = ["powered by github.com/armalife"]; //In Weiß
+_role1 = "Home of the [XOREAXEAX] gang.";
+_role1names = ["powered by github.com/armalife"];
 
 _role2 = "Unser Teamspeak:";
 _role2names = ["mail.xoreaxeax.de"]; 
@@ -53,7 +55,7 @@ _role3 = "Unsere Homepage:";
 _role3names = ["xoreaxeax.de"];
 
 _role4 = "Server-Admins";
-_role4names = ["Dr. Sommer","B. Parker","M. Coleman"];
+_role4names = ["Dr. Sommer","Don Promillo","B. Parker","M. Coleman"];
 
 _role5 = "Polizeileitung";
 _role5names = ["Max"];

@@ -36,6 +36,24 @@ switch (true) do {
 			};
 		};
 	};
+
+	case (EQUAL(_item,"marijuana")): {
+		if(vehicle player == player) then {
+			if(([false,_item,1] call life_fnc_handleInv)) then {
+				[] spawn life_fnc_ConsumeWeed;
+				closeDialog 0;
+			};
+		};
+	};
+	
+	case (EQUAL(_item,"cocaine_processed")): {
+		if(vehicle player == player) then {
+			if(([false,_item,1] call life_fnc_handleInv)) then {
+				[] spawn life_fnc_ConsumeCocaine;
+				closeDialog 0;
+			};
+		};		
+	};
 	
 	case (EQUAL(_item,"boltcutter")): {
 		[cursorTarget] spawn life_fnc_boltcutter;
