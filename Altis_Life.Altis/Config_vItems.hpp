@@ -45,7 +45,7 @@ class VirtualShops {
         side = "civ";
         license = "";
         level[] = { "", "", -1, "" };
-        items[] = { "spikeStrip", "waterBottle", "rabbit", "apple", "redgull", "tbacon", "lockpick", "pickaxe", "fuelFull", "peach", "boltcutter", "blastingcharge" };
+        items[] = { "zipties", "spikeStrip", "waterBottle", "rabbit", "apple", "redgull", "tbacon", "lockpick", "pickaxe", "fuelFull", "peach", "boltcutter", "blastingcharge" };
     };
 
     class wongs {
@@ -309,6 +309,17 @@ class VirtualItems {
         icon = "custom\icons\ico_painkillers.paa";
     };
 
+	class zipties {
+        variable = "zipties";
+        displayName = "STR_Item_Zipties";
+        weight = 1;
+        buyPrice = 10000;
+        sellPrice = 400;
+        illegal = true;
+        edible = -1;
+        icon = "custom\icons\ico_zipties.paa";
+    };
+	
     //Mined Items
     class oil_unprocessed {
         variable = "oilUnprocessed";
@@ -482,7 +493,7 @@ class VirtualItems {
         displayName = "STR_Item_HeroinP";
         weight = 2;
         buyPrice = 40000;
-        sellPrice = 34173; // HEROIN_PROCESSED_SELLPRICE
+        sellPrice = 27400; // HEROIN_PROCESSED_SELLPRICE
         illegal = true;
         edible = -1;
         icon = "icons\ico_heroinProcessed.paa";
@@ -505,7 +516,7 @@ class VirtualItems {
         displayName = "STR_Item_Marijuana";
         weight = 4;
         buyPrice = 20000;
-        sellPrice = 16314; // MARIJUANA_PROCESSED_SELLPRICE
+        sellPrice = 18888; // MARIJUANA_PROCESSED_SELLPRICE
         illegal = true;
         edible = 10;
         icon = "icons\ico_marijuana.paa";
@@ -528,7 +539,7 @@ class VirtualItems {
         displayName = "STR_Item_CocaineP";
         weight = 2;
         buyPrice = 40000;
-        sellPrice = 37961; // COCAINE_PROCESSED_SELLPRICE
+        sellPrice = 34933; // COCAINE_PROCESSED_SELLPRICE
         illegal = true;
         edible = 100;
         icon = "icons\ico_cocaineProcessed.paa";

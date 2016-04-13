@@ -4136,6 +4136,10 @@
 		<Original>Painkillers</Original>
 		<German>Schmerzmittel</German>
 	</Key>
+	<Key ID="STR_Item_Zipties">
+		<Original>Zipties</Original>
+		<German>Kabelbinder</German>
+	</Key>
   </Package>
   <Package name="Life_License">
     <Key ID="STR_License_Driver">
