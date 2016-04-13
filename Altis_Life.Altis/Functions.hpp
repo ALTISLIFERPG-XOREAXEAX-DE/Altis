@@ -208,6 +208,7 @@ class Life_Client_Core
 		class searchPosEmpty {};
 		class hideObj {};
 		class autoSave {};
+		class introCam {};
 	};
 
 	class Network
