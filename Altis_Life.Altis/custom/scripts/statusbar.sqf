@@ -5,7 +5,7 @@ disableSerialization;
 4 cutRsc ["osefStatusBar","PLAIN"];
 
 [] spawn {
-    sleep 3;
+    sleep 30;
     
 	_colourDefault    = parseText "#ADADAD";
 	_colour100 		  = parseText "#33FF00";
@@ -33,20 +33,106 @@ disableSerialization;
 		};
     
         _CivplayHUD = civilian countSide playableUnits;
+		switch(_CivplayHUD) do
+		{
+			case 9: {_CivplayHUD = "09"};
+			case 8: {_CivplayHUD = "08"};
+			case 7: {_CivplayHUD = "07"};
+			case 6: {_CivplayHUD = "06"};
+			case 5: {_CivplayHUD = "05"};
+			case 4: {_CivplayHUD = "04"};
+			case 3: {_CivplayHUD = "03"};
+			case 2: {_CivplayHUD = "02"};
+			case 1: {_CivplayHUD = "01"};
+			case 0: {_CivplayHUD = "00"};
+		};
+		
         _WestplayHUD = west countSide playableUnits;
+		switch(_WestplayHUD) do
+		{
+			case 9: {_WestplayHUD = "09"};
+			case 8: {_WestplayHUD = "08"};
+			case 7: {_WestplayHUD = "07"};
+			case 6: {_WestplayHUD = "06"};
+			case 5: {_WestplayHUD = "05"};
+			case 4: {_WestplayHUD = "04"};
+			case 3: {_WestplayHUD = "03"};
+			case 2: {_WestplayHUD = "02"};
+			case 1: {_WestplayHUD = "01"};
+			case 0: {_WestplayHUD = "00"};
+		};
+
         _IndepplayHUD = independent countSide playableUnits;
+		switch(_IndepplayHUD) do
+		{
+			case 9: {_IndepplayHUD = "09"};
+			case 8: {_IndepplayHUD = "08"};
+			case 7: {_IndepplayHUD = "07"};
+			case 6: {_IndepplayHUD = "06"};
+			case 5: {_IndepplayHUD = "05"};
+			case 4: {_IndepplayHUD = "04"};
+			case 3: {_IndepplayHUD = "03"};
+			case 2: {_IndepplayHUD = "02"};
+			case 1: {_IndepplayHUD = "01"};
+			case 0: {_IndepplayHUD = "00"};
+		};
+		
         _EastplayHUD = east countSide playableUnits;
+		switch(_EastplayHUD) do
+		{
+			case 9: {_EastplayHUD = "09"};
+			case 8: {_EastplayHUD = "08"};
+			case 7: {_EastplayHUD = "07"};
+			case 6: {_EastplayHUD = "06"};
+			case 5: {_EastplayHUD = "05"};
+			case 4: {_EastplayHUD = "04"};
+			case 3: {_EastplayHUD = "03"};
+			case 2: {_EastplayHUD = "02"};
+			case 1: {_EastplayHUD = "01"};
+			case 0: {_EastplayHUD = "00"};
+		};
 		
 		_grid = mapGridPosition player;
 		_xx = (format[_grid]) select  [0,3];
         _yy = (format[_grid]) select  [3,3];
 		
         _hunger = round(life_hunger);
+		
+		_hunger_display = _hunger;
+		
+		if (_hunger_display > 99) then {
+			_hunger_display = 99;
+		};
+
+		if (_hunger_display < 10) then {
+			_hunger_display = 10;
+		};
+		
         _thirst = round(life_thirst);
-        _damage = round ((1 - (damage player)) * 100);
+		
+		_thirst_display = _thirst;
+
+		if (_thirst_display > 99) then {
+			_thirst_display = 99;
+		};
+		
+		if (_thirst_display < 10) then {
+			_thirst_display = 10;
+		};
+		
+		_damage = round ((1 - (damage player)) * 100);
+
+		if (_damage > 99) then {
+			_damage = 99;
+		};
+
         _stamina = round(getFatigue player * 100) / 100;
 
 		_FpsHud = round (diag_fps);
+		
+		if (_FpsHud > 99) then {
+			_FpsHud = 99;
+		};
 
 		//
 		// 6 hour server restart time window
@@ -148,8 +234,26 @@ disableSerialization;
 			case(_FpsHud < 1)                       : {_colourFps =  _colourDead;};
 		};
 
-    ((uiNamespace getVariable "osefStatusBar")displayCtrl 555556)ctrlSetStructuredText parseText 
-            format["<t size='1' shadow='1' shadowColor='#000000'><img size='1.6' shadowColor='#000000' image='custom\icons\Statusbar\players.paa' color='#FFFFFF'/>%1 <img size='1.6' shadowColor='#000000' image='custom\icons\Statusbar\players.paa' color='#3399FF'/>%2 <img size='1.6' shadowColor='#000000' image='custom\icons\Statusbar\players.paa' color='#009933'/>%3 <img size='1.6' shadowColor='#000000' image='custom\icons\Statusbar\players.paa' color='#CC0000'/>%4  <img size='1.6' shadowColor='#000000' image='custom\icons\Statusbar\ico_map.paa'/>%5 <img size='1.6' shadowColor='#000000' image='custom\icons\Statusbar\hunger.paa' color='%7'/>%6 <img size='1.6' shadowColor='#000000' image='custom\icons\Statusbar\thirst.paa' color='%9'/>%8 <img size='1.6' shadowColor='#000000' image='custom\icons\Statusbar\damage.paa' color='%11'/>%10 <img size='1.6' shadowColor='#000000' image='custom\icons\Statusbar\stamina.paa' color='%13'/>%12 <img size='1.6' shadowColor='#000000' image='custom\icons\Statusbar\monitor_fps.paa' color='%15'/>%14 <img size='1.6' shadowColor='#000000' image='custom\icons\Statusbar\restart.paa' color='%16'/>Restart in %17h %18 Minuten</t>",_CivplayHUD,_WestplayHUD,_IndepplayHUD,_EastplayHUD,format["%1%2",_xx,_yy],_hunger,_colourHunger,_thirst,_colourThirst,_damage,_colourDamage,_stamina,_colourStamina,_FpsHud,_colourFps,_colourUpTimeHUD,_hours,_minutes];
+    ((uiNamespace getVariable "osefStatusBar")displayCtrl 555556)ctrlSetStructuredText parseText format["<t size='1' shadow='1' shadowColor='#000000'><img size='1.6' shadowColor='#000000' image='custom\icons\Statusbar\players.paa' color='#FFFFFF'/>%1 <img size='1.6' shadowColor='#000000' image='custom\icons\Statusbar\players.paa' color='#3399FF'/>%2 <img size='1.6' shadowColor='#000000' image='custom\icons\Statusbar\players.paa' color='#009933'/>%3 <img size='1.6' shadowColor='#000000' image='custom\icons\Statusbar\players.paa' color='#CC0000'/>%4 <img size='1.6' shadowColor='#000000' image='custom\icons\Statusbar\ico_map.paa'/>%5 <img size='1.6' shadowColor='#000000' image='custom\icons\Statusbar\hunger.paa' color='%7'/>%6 <img size='1.6' shadowColor='#000000' image='custom\icons\Statusbar\thirst.paa' color='%9'/>%8 <img size='1.6' shadowColor='#000000' image='custom\icons\Statusbar\damage.paa' color='%11'/>%10 <img size='1.6' shadowColor='#000000' image='custom\icons\Statusbar\monitor_fps.paa' color='%15'/>%14 <img size='1.6' shadowColor='#000000' image='custom\icons\Statusbar\restart.paa' color='%16'/>Restart in %17h %18 Minuten <img size='1.6' shadowColor='#000000' image='custom\icons\Statusbar\stamina.paa' color='%13'/>%12</t>",
+					_CivplayHUD,
+					_WestplayHUD,
+					_IndepplayHUD,
+					_EastplayHUD,
+					format["%1%2",_xx,_yy],
+					_hunger_display,
+					_colourHunger,
+					_thirst_display,
+					_colourThirst,
+					_damage,
+					_colourDamage,
+					_stamina,
+					_colourStamina,
+					_FpsHud,
+					_colourFps,
+					_colourUpTimeHUD,
+					_hours,
+					_minutes
+			];
     }; 
 };
 

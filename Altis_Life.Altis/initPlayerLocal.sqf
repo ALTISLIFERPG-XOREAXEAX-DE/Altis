@@ -24,6 +24,11 @@ if(EQUAL(LIFE_SETTINGS(getNumber,"spyglass_init"),1)) then {[] execVM "SpyGlass\
 //
 [] spawn life_fnc_autoSave;
 
+//
+// server intro
+//
+[] spawn life_fnc_IntroCam;
+
 if(hasInterface)then {
 	waitUntil {time > 0};
 	group player selectLeader player;
@@ -35,6 +40,9 @@ if(hasInterface)then {
 	setViewDistance 800;
 	setObjectViewDistance [800,3];
 
+	//
+	// weather:fog
+	//
 	[] spawn {
 		while{true} do {
 			uiSleep 10;
@@ -43,6 +51,9 @@ if(hasInterface)then {
 		};
 	};
 
+	//
+	// weather:rain
+	//
 	[] spawn {
 		while{true} do {
 			uiSleep 10;
@@ -54,6 +65,4 @@ if(hasInterface)then {
 	[] execVM "custom\scripts\statusbar.sqf";
 	[] execVM "custom\scripts\voiceControl.sqf";
 	[] execVM "custom\scripts\depleteVehicleFuel.sqf";
-	
-	[] spawn life_fnc_IntroCam;
 };
