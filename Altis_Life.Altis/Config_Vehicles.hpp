@@ -59,7 +59,8 @@ class CarShops {
             { "B_Heli_Light_01_F", { "", "", -1 } },
             { "O_Heli_Light_02_unarmed_F", { "", "", -1 } },
 			{ "I_Heli_Transport_02_F", { "", "", -1 } },
-			{ "B_Heli_Transport_03_unarmed_F", { "", "", -1 } }
+			{ "B_Heli_Transport_03_unarmed_F", { "", "", -1 } },
+			{ "O_Heli_Transport_04_box_F", { "", "", -1 } }
         };
     };
 
@@ -757,7 +758,14 @@ will modify the virtual space and the price of the vehicle, but other informatio
             } }
         };
     };
-	
+
+    class O_Heli_Transport_04_box_F	{
+        vItemSpace = 1200;
+        licenses[] = { {"pilot" }, {"cAir"}, {"mAir"}, {""} };
+        rentalprice[] = { 3000000, 3000000, 3000000, -1 };
+        textures[] = {};
+    };
+
     class B_Heli_Transport_03_unarmed_F	{
         vItemSpace = 500;
         licenses[] = { {"pilot" }, {"cAir"}, {"mAir"}, {""} };

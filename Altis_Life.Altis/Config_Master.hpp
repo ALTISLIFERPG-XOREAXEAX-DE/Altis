@@ -124,7 +124,7 @@ class Life_Settings {
     bank_med = 200000; //Amount of cash on bank for new medics
 
     /* Paycheck Amount */
-    paycheck_cop = 5000; //Payment for cops
+    paycheck_cop = 10000; //Payment for cops
     paycheck_civ = 1000; //Payment for civillians
     paycheck_med = 2000; //Payment for medics
 

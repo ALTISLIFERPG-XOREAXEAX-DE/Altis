@@ -57,8 +57,8 @@ _role3names = ["xoreaxeax.de"];
 _role4 = "Server-Admins";
 _role4names = ["Dr. Sommer","Don Promillo","B. Parker","M. Coleman"];
 
-_role5 = "Polizeileitung";
-_role5names = ["Max"];
+_role5 = "Polizeidirektion";
+_role5names = ["Semir Gerkhan"];
 
 _role6 = "Server Restarts";
 _role6names = ["04:00 10:00 16:00 22:00"];
