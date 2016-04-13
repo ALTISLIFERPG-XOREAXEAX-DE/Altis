@@ -49,7 +49,7 @@ _role1 = "Home of the [XOREAXEAX] gang.";
 _role1names = ["powered by github.com/armalife"];
 
 _role2 = "Unser Teamspeak:";
-_role2names = ["mail.xoreaxeax.de"]; 
+_role2names = ["78.47.101.8:31337"];
 
 _role3 = "Unsere Homepage:";
 _role3names = ["xoreaxeax.de"];
@@ -63,8 +63,8 @@ _role5names = ["Max"];
 _role6 = "Server Restarts";
 _role6names = ["04:00 10:00 16:00 22:00"];
 
-_role7 = "Support und technische Hilfe:";
-_role7names = ["support@xoreaxeax.de"];
+_role7 = "Kontakt:";
+_role7names = ["9mmfullclip@gmail.com"];
 
 _role8 = "Und jetzt ...";
 _role8names = ["... ab ins Getümmel!"];
