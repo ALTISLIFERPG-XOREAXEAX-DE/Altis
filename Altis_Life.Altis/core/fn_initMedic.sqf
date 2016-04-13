@@ -28,18 +28,11 @@ if(EQUAL(LIFE_SETTINGS(getNumber,"allow_medic_weapons"),0)) then
 };
 
 //
-// disable Autohover for medics
+// switch off third person for medics in cars.
+// switch to 3rd person when getting out of car.
 //
-//["disableAutohover", "onEachFrame", {
-//	_vehicle = vehicle player;
-//	if(isAutoHoverOn _vehicle) then {
-//		player action ["autoHoverCancel", _vehicle];
-//	}
-//}] call BIS_fnc_addStackedEventHandler;
-//
-
-//
-// disable third person for medics in cars, switch to 3rd person when getting out of car
+// this can be reverted by the medic once in the car, or out of the car.
+// this is expected. its honestly just a convenience thing.
 //
 [] spawn {
 	while {true} do {
@@ -52,14 +45,21 @@ if(EQUAL(LIFE_SETTINGS(getNumber,"allow_medic_weapons"),0)) then
 };
 
 //
-// backpack texture
+// BACKPACKS
 //
-
 [] spawn {
 	while {true} do {
 		waitUntil {backpack player == "B_Kitbag_cbr"};
-		(unitBackpack player) setObjectTextureGlobal [0, "textures\clothing\med\medic_backpack1.jpg"];
+		(unitBackpack player) setObjectTextureGlobal [0, "textures\clothing\med\medic_backpack.jpg"];
 		waitUntil {backpack player != "B_Kitbag_cbr"};
+	};
+};
+
+[] spawn {
+	while {true} do {
+		waitUntil {backpack player == "B_Kitbag_sgg"};
+		(unitBackpack player) setObjectTextureGlobal [0, "textures\clothing\med\adac_backpack.jpg"];
+		waitUntil {backpack player != "B_Kitbag_sgg"};
 	};
 };
 
@@ -71,7 +71,31 @@ if(EQUAL(LIFE_SETTINGS(getNumber,"allow_medic_weapons"),0)) then
 	};
 };
 
-[] execVM "IgiLoad\IgiLoadInit.sqf";
+//
+// UNIFORMS
+//
+[] spawn {
+	while {true} do {
+		waitUntil {uniform player == "U_O_OfficerUniform_ocamo"};
+		player setObjectTextureGlobal [0, "textures\clothing\med\medic_uniform.jpg"];
+		waitUntil {uniform player != "U_O_OfficerUniform_ocamo"};
+	};
+};
+
+[] spawn {
+	while {true} do {
+		waitUntil {uniform player == "U_B_HeliPilotCoveralls"};
+		player setObjectTextureGlobal [0, "textures\clothing\med\adac_uniform.jpg"];
+		waitUntil {uniform player != "U_B_HeliPilotCoveralls"};
+	};
+};
+
+//
+// Nur der ADAC kann die Abschleppfahrzeugfahrzeugabschleppfunktion aktivieren :)
+//
+if((str(player) in ["adac_1","adac_2","adac_3","adac_4"])) then {
+	[] execVM "IgiLoad\IgiLoadInit.sqf";
+};
 
 [] call life_fnc_spawnMenu;
 waitUntil{!isNull (findDisplay 38500)}; //Wait for the spawn selection to be open.

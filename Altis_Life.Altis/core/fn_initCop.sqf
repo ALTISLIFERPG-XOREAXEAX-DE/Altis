@@ -38,23 +38,75 @@ if(FETCH_CONST(life_coplevel) == 0) then {
 };
 
 //
-// SEK
+// Einsatzuniform (SEK oder COP, je nach Rang)
 //
-[] spawn {
-	while {true} do {
-		waitUntil {uniform player == "U_B_CombatUniform_mcam_worn"};
-		player setObjectTextureGlobal [0, "textures\clothing\cop\SEK.jpg"];
-		waitUntil {uniform player != "U_B_CombatUniform_mcam_worn"};
+if(FETCH_CONST(life_coplevel) == 1) then {
+	[] spawn {
+		while {true} do {
+			waitUntil {uniform player == "U_B_CombatUniform_mcam_worn"};
+			player setObjectTextureGlobal [0, "textures\clothing\cop\polizei_weiss.jpg"];
+			waitUntil {uniform player != "U_B_CombatUniform_mcam_worn"};
+		};
+	};
+};
+
+if(FETCH_CONST(life_coplevel) == 2) then {
+	[] spawn {
+		while {true} do {
+			waitUntil {uniform player == "U_B_CombatUniform_mcam_worn"};
+			player setObjectTextureGlobal [0, "textures\clothing\cop\polizei_weiss.jpg"];
+			waitUntil {uniform player != "U_B_CombatUniform_mcam_worn"};
+		};
+	};
+};
+
+if(FETCH_CONST(life_coplevel) == 3) then {
+	[] spawn {
+		while {true} do {
+			waitUntil {uniform player == "U_B_CombatUniform_mcam_worn"};
+			player setObjectTextureGlobal [0, "textures\clothing\cop\polizei_blau.jpg"];
+			waitUntil {uniform player != "U_B_CombatUniform_mcam_worn"};
+		};
+	};
+};
+
+if(FETCH_CONST(life_coplevel) == 4) then {
+	[] spawn {
+		while {true} do {
+			waitUntil {uniform player == "U_B_CombatUniform_mcam_worn"};
+			player setObjectTextureGlobal [0, "textures\clothing\cop\sek_blau.jpg"];
+			waitUntil {uniform player != "U_B_CombatUniform_mcam_worn"};
+		};
+	};
+};
+
+if(FETCH_CONST(life_coplevel) == 5) then {
+	[] spawn {
+		while {true} do {
+			waitUntil {uniform player == "U_B_CombatUniform_mcam_worn"};
+			player setObjectTextureGlobal [0, "textures\clothing\cop\sek_schwarz.jpg"];
+			waitUntil {uniform player != "U_B_CombatUniform_mcam_worn"};
+		};
+	};
+};
+
+if(FETCH_CONST(life_coplevel) > 5) then {
+	[] spawn {
+		while {true} do {
+			waitUntil {uniform player == "U_B_CombatUniform_mcam_worn"};
+			player setObjectTextureGlobal [0, "textures\clothing\cop\gsg9.paa"];
+			waitUntil {uniform player != "U_B_CombatUniform_mcam_worn"};
+		};
 	};
 };
 
 //
-// SEK
+// SEK (limited in shop to level 5)
 //
 [] spawn {
 	while {true} do {
 		waitUntil {uniform player == "U_B_CombatUniform_mcam_tshirt"};
-		player setObjectTextureGlobal [0, "textures\clothing\cop\SEK.jpg"];
+		player setObjectTextureGlobal [0, "textures\clothing\cop\sek_schwarz.jpg"];
 		waitUntil {uniform player != "U_B_CombatUniform_mcam_tshirt"};
 	};
 };

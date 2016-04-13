@@ -80,7 +80,8 @@ class CarShops {
             { "B_G_Offroad_01_F", { "", "", -1 } },
             { "O_MRAP_02_F", { "", "", -1 } },
             { "B_Heli_Light_01_stripped_F", { "", "", -1 } },
-            { "B_G_Offroad_01_armed_F", { "", "", -1 } }
+            { "B_G_Offroad_01_armed_F", { "", "", -1 } },
+			{ "I_Heli_light_03_unarmed_F", { "", "", -1 } }
         };
     };
 
@@ -101,7 +102,8 @@ class CarShops {
             { "B_Heli_Light_01_F", { "life_mediclevel", "SCALAR", 3 } },
             { "O_Heli_Light_02_unarmed_F", { "life_mediclevel", "SCALAR", 4 } },
 			{ "I_Heli_Transport_02_F", { "life_mediclevel", "SCALAR", 4 } },
-			{ "B_Heli_Transport_03_unarmed_F", { "life_mediclevel", "SCALAR", 4 } }
+			{ "B_Heli_Transport_03_unarmed_F", { "life_mediclevel", "SCALAR", 4 } },
+			{ "I_Heli_light_03_unarmed_F", { "life_mediclevel", "SCALAR", 4 } }
         };
     };
 
@@ -187,11 +189,16 @@ class LifeCfgVehicles {
         licenses[] = { {""}, {""}, {""}, {""} };
         rentalprice[] = { -1, -1, 60000, -1 };		
         textures[] = {
-			{ "Havarie", "med", {
-                "\a3\soft_f_beta\truck_01\data\truck_01_ext_01_co.paa",
-                "#(argb,8,8,3)color(1,1,0.05,1)",
-				"#(argb,8,8,3)color(1,0,0.05,1)"
-            } }
+			{ "Standard", "med", {
+				"\a3\soft_f_beta\truck_01\data\truck_01_ext_01_co.paa",
+				"\a3\soft_f_beta\truck_01\data\truck_01_ext_02_co.paa",
+				"\A3\Soft_F_Gamma\Truck_01\Data\truck_01_mprimer_CO.paa"
+            } },
+			{ "ADAC", "med", {
+				"textures\vehicles\adac\hemtt\adac.jpg",
+				"\a3\soft_f_beta\truck_01\data\truck_01_ext_02_co.paa",
+				"\A3\Soft_F_Gamma\Truck_01\Data\truck_01_mprimer_CO.paa"
+            } },
 		};
     };
 	
@@ -588,7 +595,22 @@ will modify the virtual space and the price of the vehicle, but other informatio
             } },
             { "Warframe", "civ", {
                 "textures\vehicles\civ\suv\warframe.jpg"
-            } }			
+            } },
+            { "ADAC", "med", {
+                "textures\vehicles\adac\suv\adac1.jpg"
+            } },
+            { "ADAC schwarzgelb", "med", {
+                "textures\vehicles\adac\suv\adac2.paa"
+            } },
+            { "ADAC gelbschwarz", "med", {
+                "textures\vehicles\adac\suv\adac3.paa"
+            } },
+            { "Skull", "civ", {
+                "textures\vehicles\civ\suv\skull.jpg"
+            } },
+            { "Hello Kitty Red", "civ", {
+                "textures\vehicles\civ\suv\hellokitty2.jpg"
+            } }
         };
     };
 
@@ -709,7 +731,19 @@ will modify the virtual space and the price of the vehicle, but other informatio
             } },
             { "SEK", "cop", {
                 "textures\air\cop\m900\sek.jpg"
-            } }
+            } },
+            { "Hello Kitty", "civ", {
+                "textures\air\civ\m900\kitty.jpg"
+            } },			
+            { "Red Bull", "civ", {
+                "textures\air\civ\m900\redbull.jpg"
+            } },
+            { "Rettung", "med", {
+                "textures\air\med\m900\rettung.jpg"
+            } },
+            { "ADAC", "med", {
+                "textures\air\adac\m900\adac.paa"
+            } },
         };
     };
 
@@ -718,6 +752,9 @@ will modify the virtual space and the price of the vehicle, but other informatio
         rentalprice[] = { 245000, 55000, 40000, -1 };
     };
 
+	//
+	// Orca
+	//
     class O_Heli_Light_02_unarmed_F {
         vItemSpace = 210;
         licenses[] = { {"pilot" }, {"cAir"}, {"mAir"}, {""} };
@@ -737,6 +774,12 @@ will modify the virtual space and the price of the vehicle, but other informatio
             } },
             { "EMS White", "med", {
                 "#(argb,8,8,3)color(1,1,1,0.8)"
+            } },
+			{ "ADAC", "med", {
+                "textures\air\adac\orca\adac.jpg"
+            } },
+			{ "Notarzt", "med", {
+                "textures\air\med\orca\medic.jpg"
             } }
         };
     };
@@ -755,7 +798,12 @@ will modify the virtual space and the price of the vehicle, but other informatio
                 "#(argb,8,8,3)color(1,1,1,0.8)",
 				"#(argb,8,8,3)color(1,1,1,0.8)",
 				"#(argb,8,8,3)color(1,1,1,0.8)"
-            } }
+            } },
+            { "Standard", "civ", {
+				 "A3\Air_F_Beta\Heli_Transport_02\Data\Heli_Transport_02_1_INDP_CO.paa",
+				 "A3\Air_F_Beta\Heli_Transport_02\Data\Heli_Transport_02_2_INDP_CO.paa",
+				 "A3\Air_F_Beta\Heli_Transport_02\Data\Heli_Transport_02_3_INDP_CO.paa"
+			} }
         };
     };
 
@@ -782,6 +830,26 @@ will modify the virtual space and the price of the vehicle, but other informatio
 				"#(argb,8,8,3)color(1,1,1,0.8)"
             } }
         };
+    };
+
+    class I_Heli_light_03_unarmed_F	{
+        vItemSpace = 150;
+        licenses[] = { {"pilot" }, {"cAir"}, {"mAir"}, {""} };
+        rentalprice[] = { 1000000, 100000, 100000, -1 };
+        textures[] = {
+            { "Standard", "civ", {
+                "\A3\Air_F_EPB\Heli_Light_03\data\Heli_Light_03_base_CO.paa"
+            } },
+            { "ADAC", "med", {
+                "textures\air\adac\hellcat\adac.jpg"
+            } },
+            { "Bundespolizei", "cop", {
+                "textures\air\cop\hellcat\polizei.jpg"
+            } },
+            { "SEK", "cop", {
+                "textures\air\cop\hellcat\sek.jpg"
+            } }
+		};
     };
 	
     class B_SDV_01_F {

@@ -24,11 +24,6 @@ if(EQUAL(LIFE_SETTINGS(getNumber,"spyglass_init"),1)) then {[] execVM "SpyGlass\
 //
 [] spawn life_fnc_autoSave;
 
-//
-// server intro
-//
-[] spawn life_fnc_IntroCam;
-
 if(hasInterface)then {
 	waitUntil {time > 0};
 	group player selectLeader player;

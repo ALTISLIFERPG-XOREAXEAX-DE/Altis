@@ -33,7 +33,7 @@ _message = _message + "OFFENE BUGS:<br />";
 _message = _message + "Der Medic Request wenn man stirbt ist verbuggt, die Alarmierung der Medics funktioniert erst beim ZWEITEN Mal.<br />";
 _message = _message + "Daher bitte nach dem Sterben entweder WARTEN mit dem Druecken oder nach 20 Sekunden erneut druecken!<br />";
 _message = _message + "<br />";
-_message = _message + "TS3 Addresse: xoreaxeax.de (37.187.101.121) <br />";
+_message = _message + "TS3 Addresse: 78.47.101.8:31337 <br />";
 
 _text1 ctrlSetStructuredText (parseText _message);
 
