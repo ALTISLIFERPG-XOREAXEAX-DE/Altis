@@ -66,6 +66,10 @@
       <Portuguese>Mercado Rebelde</Portuguese>
       <Polish>Market Rebeliantów</Polish>
     </Key>
+    <Key ID="STR_License_DHS">
+	  <Original>DHS Clan License</Original>
+	  <German>DHS Mitgliedslizenz</German>
+	</Key>
     <Key ID="STR_Shops_Gang">
       <Original>Gang Market</Original>
       <German>Gang Markt</German>
