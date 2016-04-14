@@ -49,17 +49,18 @@ if(EQUAL(LIFE_SETTINGS(getNumber,"allow_medic_weapons"),0)) then
 //
 [] spawn {
 	while {true} do {
-		waitUntil {backpack player == "B_Kitbag_cbr"};
-		(unitBackpack player) setObjectTextureGlobal [0, "textures\clothing\med\medic_backpack.jpg"];
-		waitUntil {backpack player != "B_Kitbag_cbr"};
+		waitUntil {backpack player == "B_Kitbag_sgg"};
+		// (unitBackpack player) setObjectTextureGlobal [0, "textures\clothing\med\medic_backpack.jpg"];
+		(unitBackpack player) setObjectTextureGlobal [0, "#(rgb,8,8,3)color(1,0,0,1)"];
+		waitUntil {backpack player != "B_Kitbag_sgg"};
 	};
 };
 
 [] spawn {
 	while {true} do {
-		waitUntil {backpack player == "B_Kitbag_sgg"};
-		(unitBackpack player) setObjectTextureGlobal [0, "textures\clothing\med\adac_backpack.jpg"];
-		waitUntil {backpack player != "B_Kitbag_sgg"};
+		waitUntil {backpack player == "B_Kitbag_cbr"};
+		(unitBackpack player) setObjectTextureGlobal [0, "#(rgb,8,8,3)color(1,1,0,1)"];
+		waitUntil {backpack player != "B_Kitbag_cbr"};
 	};
 };
 

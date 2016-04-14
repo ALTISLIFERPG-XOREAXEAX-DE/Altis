@@ -244,8 +244,8 @@ class Clothing {
         };
         backpacks[] = {
             { "NONE", "Remove Backpack", 0, { "", "", -1 } },
-            { "B_Kitbag_cbr", "Rettungsrucksack", 3000, { "", "", -1 } },
-			{ "B_Kitbag_sgg", "ADAC Rucksack", 3000, { "", "", -1 } }
+            { "B_Kitbag_sgg", "MEDIC rucksack", 3000, { "", "", -1 } },
+			{ "B_Kitbag_cbr", "ADAC Rucksack", 3000, { "", "", -1 } }
         };
     };
 
