@@ -108,6 +108,16 @@ class CfgSounds
 		sound[] = {"\custom\sounds\intro\welcome.ogg", 1.0, 1};
 		titles[] = {};
 	};
+
+	//
+	// medics
+	//
+	class welcome2
+	{
+		name = "welcome2";
+		sound[] = {"\custom\sounds\intro\welcome2.ogg", 1.0, 1};
+		titles[] = {};
+	};
 	
 	class Cocaine_sound
 	{

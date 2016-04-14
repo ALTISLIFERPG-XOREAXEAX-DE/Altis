@@ -49,7 +49,7 @@ if (isnil "IL_Variables") then
 	//-1 - do nothing
 	//0 - set to 0
 	//1 - keep such as before loading/unloading
-	IL_CDamage = -1;
+	IL_CDamage = 0;
 
 	//AddAction menu position
 	IL_Action_LU_Priority = 30; //Load and (para)unload
@@ -151,7 +151,7 @@ if (isnil "IL_Variables") then
 	IL_Supported_SUV = ["C_SUV_01_F"];
 	IL_Supported_APC = ["B_APC_Tracked_01_CRV_F"];
 	IL_Supported_Gun = ["O_Boat_Armed_01_hmg_F"];
-	IL_Supported_MH9 = ["B_Heli_Light_01_F", "B_mas_mar_Heli_Light_01_F","B_Heli_Light_01_stripped_F","C_Heli_Light_01_civil_F"];
+	IL_Supported_MH9 = ["B_Heli_Light_01_F", "B_mas_mar_Heli_Light_01_F","B_Heli_Light_01_stripped_F","C_Heli_Light_01_civil_F","O_Heli_Transport_04_box_F","B_Heli_Transport_03_unarmed_F","I_Heli_Transport_02_F","O_Heli_Light_02_unarmed_F","B_Heli_Transport_01_F"];
 	IL_Supported_Hatchback = ["C_Hatchback_01_F", "C_Hatchback_01_sport_F"];
 	IL_Supported_Hummvee = ["rc_hmmwv", "HMMWV2", "HMMWV_M1035", "M1114_AGS_ACR", "HMMWV_M1151_M2", "HMMWV2_M2", "HMMWV2_MK19", "HMMWV2_TOW", "HMMWV", "HMMWV_M2", "HMMWV_MK19", "HMMWV_TOW"];
 	IL_Supported_Quadbike = ["C_Kart_01_Blu_F","C_Kart_01_Fuel_F","C_Kart_01_Vrana_F","C_Kart_01_Red_F","I_Quadbike_01_F", "C_Quadbike_01_F", "O_Quadbike_01_F", "B_G_Quadbike_01_F", "B_Quadbike_01_F", "CAF_Quadbike_OD", "CAF_Quadbike_AR", "Marinir_Quadbike_01_FG", "B_mas_mar_Quadbike_01_F"];
@@ -541,6 +541,22 @@ if (isnil "IL_Procedures") then
 		{
 			_obj setVariable["slots", 6, true];
 			_obj setVariable["cargo_offset", 0.8, true];
+
+			if (_obj_type == "B_Heli_Transport_01_F") then {
+				_obj setVariable["cargo_offset", 10, true];
+			};			
+			if (_obj_type == "I_Heli_Transport_02_F") then {
+				_obj setVariable["cargo_offset", 10, true];
+			};
+			if (_obj_type == "O_Heli_Light_02_unarmed_F") then {
+				_obj setVariable["cargo_offset", 10, true];
+			};
+			if (_obj_type == "B_Heli_Transport_03_unarmed_F") then {
+				_obj setVariable["cargo_offset", 10, true];
+			};
+			if (_obj_type == "O_Heli_Transport_04_box_F") then {
+				_obj setVariable["cargo_offset", 10, true];
+			};
 		};
 		if (_obj_type in IL_Supported_Hunter) then
 		{
@@ -1686,6 +1702,24 @@ if (isnil "IL_Procedures") then
 
 						if (IL_CDamage == 0) then
 						{
+							_x setDamage 0;
+							sleep 1;
+							_x setDamage 0;
+							sleep 1;
+							_x setDamage 0;
+							sleep 1;
+							_x setDamage 0;
+							sleep 1;
+							_x setDamage 0;
+							sleep 1;
+							_x setDamage 0;
+							sleep 1;
+							_x setDamage 0;
+							sleep 1;
+							_x setDamage 0;
+							sleep 1;
+							_x setDamage 0;
+							sleep 1;
 							_x setDamage 0;
 						};
 						
