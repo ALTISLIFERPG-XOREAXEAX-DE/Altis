@@ -83,20 +83,6 @@ switch (_side) do {
 		_new = [(_queryResult select 10)] call DB_fnc_mresToArray;
 		if(typeName _new == "STRING") then {_new = call compile format["%1", _new];};
 		_queryResult set[10,_new];
-
-		//Playtime
-		_new = [(_queryResult select 11)] call DB_fnc_mresToArray;
-		if(typeName _new == "STRING") then {_new = call compile format["%1", _new];};
-		_index = TON_fnc_playtime_values_request find [_uid, _new];
-		if(_index != -1) then {
-			TON_fnc_playtime_values_request set[_index,-1];
-			TON_fnc_playtime_values_request = TON_fnc_playtime_values_request - [-1];
-			TON_fnc_playtime_values_request pushBack [_uid, _new];
-		} else {
-			TON_fnc_playtime_values_request pushBack [_uid, _new];
-		};
-		_new = _new select 0;
-		[_uid, _new] call TON_fnc_setPlayTime;
 	};
 
 	case civilian: {
@@ -113,24 +99,6 @@ switch (_side) do {
 		if(typeName _new == "STRING") then {_new = call compile format["%1",_new];};
 		_queryResult set[11,_new];
 
-//
-//		https://github.com/ArmaLife/Altis/issues/537
-//
-//		//Playtime
-//		_new = [(_queryResult select 12)] call DB_fnc_mresToArray;
-//		if(typeName _new == "STRING") then {_new = call compile format["%1", _new];};
-//		_index = TON_fnc_playtime_values_request find [_uid, _new];
-//		if(_index != -1) then {
-//			TON_fnc_playtime_values_request set[_index,-1];
-//			TON_fnc_playtime_values_request = TON_fnc_playtime_values_request - [-1];
-//			TON_fnc_playtime_values_request pushBack [_uid, _new];
-//		} else {
-//			TON_fnc_playtime_values_request pushBack [_uid, _new];
-//		};
-//		_new = _new select 2;
-//		[_uid, _new] call TON_fnc_setPlayTime;
-//
-
 		_houseData = _uid spawn TON_fnc_fetchPlayerHouses;
 		waitUntil {scriptDone _houseData};
 		_queryResult pushBack (missionNamespace getVariable[format["houses_%1",_uid],[]]);
@@ -144,19 +112,6 @@ switch (_side) do {
 		_new = [(_queryResult select 9)] call DB_fnc_mresToArray;
 		if(typeName _new == "STRING") then {_new = call compile format["%1", _new];};
 		_queryResult set[9,_new];
-		//Playtime
-		_new = [(_queryResult select 10)] call DB_fnc_mresToArray;
-		if(typeName _new == "STRING") then {_new = call compile format["%1", _new];};
-		_index = TON_fnc_playtime_values_request find [_uid, _new];
-		if(_index != -1) then {
-			TON_fnc_playtime_values_request set[_index,-1];
-			TON_fnc_playtime_values_request = TON_fnc_playtime_values_request - [-1];
-			TON_fnc_playtime_values_request pushBack [_uid, _new];
-		} else {
-			TON_fnc_playtime_values_request pushBack [_uid, _new];
-		};
-		_new = _new select 1;
-		[_uid, _new] call TON_fnc_setPlayTime;
 	};
 };
 

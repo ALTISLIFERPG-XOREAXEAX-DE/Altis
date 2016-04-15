@@ -1,0 +1,3 @@
+The files in these folders are from armalife 4.4r2 but the playtime handling has been removed because we suspect it to fuck up client sessions.
+
+This leads to players getting nulled when joining a server where they already played. Which of course is a major disappointment for them...
