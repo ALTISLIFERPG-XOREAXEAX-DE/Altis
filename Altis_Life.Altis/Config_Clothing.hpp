@@ -201,20 +201,101 @@ class Clothing {
         license = "";
         side = "civ";
         uniforms[] = {
-            { "NONE", "Remove Uniform", 0, { "", "", -1 } }
+            { "NONE", "Remove Uniform", 0, { "", "", -1 } },
+            { "U_IG_Guerilla1_1", "", 5000, {"", "", -1} },
+            { "U_I_G_Story_Protagonist_F", "", 7500, { "", "", -1 } },
+            { "U_I_G_resistanceLeader_F", "", 11500, { "", "", -1 } },
+            { "U_IG_leader", "Guerilla Leader", 15340, { "", "", -1 } },
+            { "U_O_PilotCoveralls", "", 15610, { "", "", -1 } },
+            { "U_O_SpecopsUniform_ocamo", "", 17500, { "", "", -1 } },
+            { "U_O_GhillieSuit", "", 50000, { "", "", -1 } },
+            { "U_C_Driver_1_black", "", 1500, { "", "", -1 } },
+            { "U_C_Driver_1_blue", "", 1500, { "", "", -1 } },
+            { "U_C_Driver_1_red", "", 1500, { "", "", -1 } },
+            { "U_C_Driver_1_orange", "", 1500, { "", "", -1 } },
+            { "U_C_Driver_1_green", "", 1500, { "", "", -1 } },
+            { "U_C_Driver_1_white", "", 1500, { "", "", -1 } },
+            { "U_C_Driver_1_yellow", "", 1500, { "", "", -1 } },
+            { "U_C_Driver_2", "", 3500, { "", "", -1 } },
+            { "U_C_Driver_1", "", 3600, { "", "", -1 } },
+            { "U_C_Driver_3", "", 3700, { "", "", -1 } },
+            { "U_C_Driver_4", "", 3700, { "", "", -1 } },
+            { "U_C_Poor_2", "Rag tagged clothes", 250, { "", "", -1 } },
+            { "U_IG_Guerilla2_2", "Green stripped shirt & Pants", 650, { "", "", -1 } },
+            { "U_IG_Guerilla3_1", "Brown Jacket & Pants", 735, { "", "", -1 } },
+            { "U_OrestesBody", "Surfing On Land", 1100, { "", "", -1 } },
+            { "U_IG_Guerilla2_3", "The Outback Rangler", 1200, { "", "", -1 } },
+            { "U_C_HunterBody_grn", "The Hunters Look", 1500, { "", "", -1 } },
+            { "U_C_WorkerCoveralls", "Mechanic Coveralls", 2500, { "", "", -1 } },
+            { "U_NikosAgedBody", "Casual Wears", 5000, { "", "", -1 } }
         };
         headgear[] = {
-            { "NONE", "Remove Hat", 0, { "", "", -1 } }
+            { "NONE", "Remove Hat", 0, { "", "", -1 } },
+            { "H_Bandanna_camo", "", 650, { "", "", -1 } },
+            { "H_ShemagOpen_khk", "", 800, { "", "", -1 } },
+            { "H_ShemagOpen_tan", "", 850, { "", "", -1 } },
+            { "H_Shemag_olive", "", 850, { "", "", -1 } },
+            { "H_MilCap_oucamo", "", 1200, { "", "", -1 } },
+            { "H_HelmetO_ocamo", "", 2500, { "", "", -1 } }
         };
         goggles[] = {
-            { "NONE", "Remove Glasses", 0, { "", "", -1 } }
+            { "NONE", "Remove Glasses", 0, { "", "", -1 } },
+            { "G_Shades_Black", "", 20, { "", "", -1 } },
+            { "G_Shades_Blue", "", 20, { "", "", -1 } },
+            { "G_Sport_Blackred", "", 25, { "", "", -1 } },
+            { "G_Sport_Checkered", "", 25, { "", "", -1 } },
+            { "G_Sport_Blackyellow", "", 25, { "", "", -1 } },
+            { "G_Sport_BlackWhite", "", 25, { "", "", -1 } },
+            { "G_Lowprofile", "", 30, { "", "", -1 } },
+            { "G_Squares", "", 50, { "", "", -1 } },
+            { "G_Combat", "", 125, { "", "", -1 } },
+            { "G_Balaclava_blk", "", 150, { "", "", -1 } },
+            { "G_Balaclava_combat", "", 150, { "", "", -1 } },
+            { "G_Balaclava_lowprofile", "", 150, { "", "", -1 } },
+            { "G_Balaclava_oli", "", 150, { "", "", -1 } },
+            { "G_Bandanna_aviator", "", 150, { "", "", -1 } },
+            { "G_Bandanna_beast", "", 150, { "", "", -1 } },
+            { "G_Bandanna_blk", "", 150, { "", "", -1 } },
+            { "G_Bandanna_khk", "", 150, { "", "", -1 } },
+            { "G_Bandanna_oli", "", 150, { "", "", -1 } },
+            { "G_Bandanna_shades", "", 150, { "", "", -1 } },
+            { "G_Bandanna_sport", "", 150, { "", "", -1 } },
+            { "G_Bandanna_tan", "", 150, { "", "", -1 } }
         };
         vests[] = {
             { "NONE", "Remove Vest", 0, { "", "", -1 } },
-            { "V_Rangemaster_belt", "", 1900, { "", "", -1 } }
+            { "V_Rangemaster_belt", "", 1900, { "", "", -1 } },
+            { "V_BandollierB_cbr", "", 4500, { "", "", -1 } },
+            { "V_HarnessO_brn", "", 7500, { "", "", -1 } },
+            { "V_TacVest_khk", "", 12500, { "", "", -1 } }
         };
         backpacks[] = {
-            { "NONE", "Remove Backpack", 0, { "", "", -1 } }
+            { "NONE", "Remove Backpack", 0, { "", "", -1 } },
+            { "B_OutdoorPack_blk", "", 500, { "", "", -1 } },
+            { "B_AssaultPack_khk", "", 2000, { "", "", -1 } },
+            { "B_AssaultPack_dgtl", "", 2000, { "", "", -1 } },
+            { "B_AssaultPack_rgr", "", 2000, { "", "", -1 } },
+            { "B_AssaultPack_sgg", "", 2000, { "", "", -1 } },
+            { "B_AssaultPack_blk", "", 2000, { "", "", -1 } },
+            { "B_AssaultPack_cbr", "", 2000, { "", "", -1 } },
+            { "B_AssaultPack_mcamo", "", 2000, { "", "", -1 } },
+            { "B_TacticalPack_oli", "", 2500, { "", "", -1 } },
+            { "B_Kitbag_mcamo", "", 3500, { "", "", -1 } },
+            { "B_Kitbag_sgg", "", 3500, { "", "", -1 } },
+            { "B_Kitbag_cbr", "", 3500, { "", "", -1 } },
+            { "B_FieldPack_blk", "", 5000, { "", "", -1 } },
+            { "B_FieldPack_ocamo", "", 5000, { "", "", -1 } },
+            { "B_FieldPack_oucamo", "", 5000, { "", "", -1 } },
+            { "B_Bergen_sgg", "", 6500, { "", "", -1 } },
+            { "B_Bergen_mcamo", "", 6500, { "", "", -1 } },
+            { "B_Bergen_rgr", "", 6500, { "", "", -1 } },
+            { "B_Bergen_blk", "", 6500, { "", "", -1 } },
+            { "B_Carryall_ocamo", "", 7500, { "", "", -1 } },
+            { "B_Carryall_oucamo", "", 7500, { "", "", -1 } },
+            { "B_Carryall_mcamo", "", 7500, { "", "", -1 } },
+            { "B_Carryall_oli", "", 7500, { "", "", -1 } },
+            { "B_Carryall_khk", "", 7500, { "", "", -1 } },
+            { "B_Carryall_cbr", "", 7500, { "", "", -1 } }
         };
     };
 

@@ -14,24 +14,14 @@ playSound ["welcome",false];
 
 any=[
 	[
-
 		["# XOR $EAX,$EAX","<t align = 'center' size = '1'>%1</t><br/>"],
 		["# XOR $EBX,$EBX","<t align = 'center' size = '1'>%1</t><br/>"],
 		["# XOR $ECX,$ECX","<t align = 'center' size = '1'>%1</t><br/>"],
-		["# XOR $EDX,$EDX","<t align = 'center' size = '1'>%1</t><br/>"],
-
-		["Willkommen auf dem ultimativen ArmaLife Server!                ","<t align = 'center' size = '0.7'>%1</t><br/>"],
-		["Server Restarts: 04:00, 10:00, 16:00, 22:00 Uhr                ","<t align = 'center' size = '0.7'>%1</t><br/>"],
-		["Du warst beim Einloggen im Knast und all Dein Geld war weg?    ","<t align = 'center' size = '0.7'>%1</t><br/>"],
-		["Das ist leider ein manchmal auftretender Serverbug :(          ","<t align = 'center' size = '0.7'>%1</t><br/>"],
-		["Waffen und Kohle gibt es wieder und Schmerzensgeld oben drauf! ","<t align = 'center' size = '0.7'>%1</t><br/>"],
-		["Melde Dich einfach bei uns im TS Support :)                    ","<t align = 'center' size = '0.7'>%1</t><br/>"],
-		["-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*EOL","<t align = 'center' size = '0.7'>%1</t><br/>"]
-		
+		["# XOR $EDX,$EDX","<t align = 'center' size = '1'>%1</t><br/>"]
 	]
 ] spawn BIS_fnc_typeText;
 
-sleep 16;
+sleep 5;
 titleText ["","black out",3];
 waitUntil {camCommitted _camera};
 
