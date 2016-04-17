@@ -101,17 +101,31 @@ switch (_code) do {
 			};
 		};
 		
+		//
+		// H Taste fuer Zivilisten
+		//
 		if (playerSide == civilian) then {
+			// wenn Du in einem Auto bist
 			if (vehicle player != player) then {
+				// und gerade nichts besseres zu tun hast
 				if(!life_action_inUse) then {
+					// auch solltest Du nicht restrained sein
 					if (player GVAR ["restrained",false]) then {
 						hint "Du bist gefesselt, du kannst das jetzt nicht tun.";
 					} else {
+						// dann gucken wir mal ob das auto offen ist
 						_veh = vehicle player;
 						_locked = locked _veh;
-				
+
+						// du sitzt in einem offenen Auto und bist nicht restrained und hast H gedrueckt
 						if(EQUAL(_locked,0)) then {
-							{ _x SVAR ["restrained",false,true]; moveOut _x; } forEach crew vehicle player;
+							{
+								// ist es ein spieler in dem auto der nicht ich selbst bin?
+								if (_x != player) then {
+									// schmeiss den mal raus
+									[_x] remoteExecCall ["life_fnc_pulloutVeh",_x];
+								};
+							} forEach crew vehicle player;
 						};
 					};
 				};
@@ -157,7 +171,7 @@ switch (_code) do {
 				if(!life_action_inUse) then {
 					if (vehicle player == player) then {
 						cursorTarget lock 0; hint "cursorTarget unlocked";
-						
+						cursorTarget SVAR ["restrained",false,true];
 						{ _x SVAR ["restrained",false,true]; moveOut _x; } forEach crew cursorTarget;
 					} else {
 						vehicle player lock 0; hint "vehicle unlocked";
