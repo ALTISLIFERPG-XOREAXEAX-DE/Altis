@@ -13,7 +13,9 @@ _fnc_food =  {
 	else
 	{
 		SUB(life_hunger,10);
+	
 		[] call life_fnc_hudUpdate;
+
 		if(life_hunger < 2) then {player setDamage 1; hint localize "STR_NOTF_EatMSG_Death";};
 		switch(life_hunger) do {
 			case 30: {hint localize "STR_NOTF_EatMSG_1";};
@@ -31,7 +33,9 @@ _fnc_water = {
 	else
 	{
 		SUB(life_thirst,10);
+
 		[] call life_fnc_hudUpdate;
+
 		if(life_thirst < 2) then {player setDamage 1; hint localize "STR_NOTF_DrinkMSG_Death";};
 		switch(life_thirst) do  {
 			case 30: {hint localize "STR_NOTF_DrinkMSG_1";};
@@ -109,12 +113,29 @@ while {true} do {
 	/* Incremental paycheck */
 	if((time - _paycheckTime) > 600) then {[] call _fnc_incremental_paycheck; _paycheckTime = time;};
 
-	if ((FETCH_CONST(life_adminlevel)) < 2) then {
-		/* Thirst / Hunger adjustment that is time based */
-		if((time - _waterTime) > 600) then {[] call _fnc_water; _waterTime = time;};
-		if((time - _foodTime) > 850) then {[] call _fnc_food; _foodTime = time;};
+	/* Thirst / Hunger adjustment that is time based */
+	if((time - _waterTime) > 600) then {
+		[] call _fnc_water;
+		_waterTime = time;
+		
+		if ((FETCH_CONST(life_adminlevel)) > 1) then {
+			if (playerSide == independent) then {
+				life_thirst = 99;
+			};
+		};
 	};
 	
+	if((time - _foodTime) > 1200) then {
+		[] call _fnc_food;
+		_foodTime = time;
+		
+		if ((FETCH_CONST(life_adminlevel)) > 1) then {
+			if (playerSide == independent) then {
+				life_hunger = 99;
+			};
+		};
+	};
+
 	/* Adjustment of carrying capacity based on backpack changes */
 	if(EQUAL(backpack player,"")) then {
 		life_maxWeight = LIFE_SETTINGS(getNumber,"total_maxWeight");

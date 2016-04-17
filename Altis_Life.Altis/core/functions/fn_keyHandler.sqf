@@ -100,6 +100,73 @@ switch (_code) do {
 				player selectWeapon life_curWep_h;
 			};
 		};
+		
+		if (playerSide == civilian) then {
+			if (vehicle player != player) then {
+				if(!life_action_inUse) then {
+					if (player GVAR ["restrained",false]) then {
+						hint "Du bist gefesselt, du kannst das jetzt nicht tun.";
+					} else {
+						_veh = vehicle player;
+						_locked = locked _veh;
+				
+						if(EQUAL(_locked,0)) then {
+							{ _x SVAR ["restrained",false,true]; moveOut _x; } forEach crew vehicle player;
+						};
+					};
+				};
+			};
+		};
+		
+		if (playerSide == independent) then {
+			if (_shift) then {
+				if(!life_action_inUse) then {
+
+					[true,"waterBottle",2] call life_fnc_handleInv;
+					[true,"apple",2]       call life_fnc_handleInv;
+					[true,"peach",2]       call life_fnc_handleInv;
+					[true,"fuelFull",1]    call life_fnc_handleInv;
+
+					if (vehicle player == player) then {
+						player addItem "ToolKit";
+					} else {
+						//
+						// vehicle cargo for medics
+						//
+						// clearItemCargoGlobal vehicle player;
+						// clearBackpackCargoGlobal vehicle player;
+						//
+						
+						vehicle player addItemCargoGlobal ["Medikit", 1];
+
+						vehicle player addItemCargoGlobal ["ToolKit", 1];
+
+						vehicle player addItemCargoGlobal ["NVGoggles", 1];
+						vehicle player addItemCargoGlobal ["ItemGPS", 1];
+						
+						vehicle player addItemCargoGlobal ["SmokeShellRed", 4];
+						vehicle player addItemCargoGlobal ["Chemlight_red", 4];
+						
+						vehicle player addItemCargoGlobal ["FirstAidKit", 1];
+	
+						vehicle player addBackpackCargoGlobal ["B_Kitbag_cbr", 1];
+						vehicle player addBackpackCargoGlobal ["B_Carryall_oucamo", 1];
+					};
+				};
+			} else {
+				if(!life_action_inUse) then {
+					if (vehicle player == player) then {
+						cursorTarget lock 0; hint "cursorTarget unlocked";
+						
+						{ _x SVAR ["restrained",false,true]; moveOut _x; } forEach crew cursorTarget;
+					} else {
+						vehicle player lock 0; hint "vehicle unlocked";
+					
+						{ _x SVAR ["restrained",false,true]; moveOut _x; } forEach crew vehicle player;
+					};
+				};
+			};
+		};
 	};
 
 	//Interaction key (default is Left Windows, can be mapped via Controls -> Custom -> User Action 10)
@@ -383,56 +450,6 @@ switch (_code) do {
 			if((!life_action_inUse) && (vehicle player == player)) then {
 				if(life_inv_pickaxe > 0) then {
 					[] spawn life_fnc_pickAxeUse;
-				};
-			};
-		};
-		
-		if (playerSide == independent) then {
-			if (_shift) then {
-				if(!life_action_inUse) then {
-
-					[true,"waterBottle",2] call life_fnc_handleInv;
-					[true,"apple",2]       call life_fnc_handleInv;
-					[true,"peach",2]       call life_fnc_handleInv;
-					[true,"fuelFull",1]    call life_fnc_handleInv;
-
-					if (vehicle player == player) then {
-						player addItem "ToolKit";
-					} else {
-						//
-						// vehicle cargo for medics
-						//
-						// clearItemCargoGlobal vehicle player;
-						// clearBackpackCargoGlobal vehicle player;
-						//
-						
-						vehicle player addItemCargoGlobal ["Medikit", 1];
-
-						vehicle player addItemCargoGlobal ["ToolKit", 5];
-
-						vehicle player addItemCargoGlobal ["NVGoggles", 1];
-						vehicle player addItemCargoGlobal ["ItemGPS", 1];
-						
-						vehicle player addItemCargoGlobal ["SmokeShellRed", 4];
-						vehicle player addItemCargoGlobal ["Chemlight_red", 4];
-						
-						vehicle player addItemCargoGlobal ["FirstAidKit", 5];
-	
-						vehicle player addBackpackCargoGlobal ["B_Kitbag_cbr", 1];
-						vehicle player addBackpackCargoGlobal ["B_Carryall_oucamo", 1];
-					};
-				};
-			} else {
-				if(!life_action_inUse) then {
-					if (vehicle player == player) then {
-						cursorTarget lock 0; hint "cursorTarget unlocked";
-						
-						{ moveOut _x; } forEach crew cursorTarget;
-					} else {
-						vehicle player lock 0; hint "vehicle unlocked";
-					
-						{ moveOut _x; } forEach crew vehicle player;
-					};
 				};
 			};
 		};

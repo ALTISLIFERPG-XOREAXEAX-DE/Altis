@@ -8,15 +8,17 @@ class Life_Settings {
     /* Persistent Player Settings */
     save_civ_weapons = true; //Allow civilians to save weapons on them?
     save_virtualItems = true; //Save Virtual items (all sides)?
-    save_playerStats = true; //Save food, water and damage (all sides)?
-    save_civ_position = true; //Save civilian location?
+	
+    save_playerStats = false; //Save food, water and damage (all sides)?
+    save_civ_position = false; //Save civilian location?
     save_civ_positionStrict = false; //Strip the player if possible combat-log?  WARNING: Server crashes and lack of reliable syncing can trigger this.
 
     /* Persistent Vehicle Settings */
     save_veh_virtualItems = true; //Save Virtual items for vehicles (all sides)?
     save_veh_gear = true; //Save Gear for vehicles (all sides)?
-    save_veh_fuel = true; //Save Vehicle fuel state
-    save_veh_damage = true; //Save Vehicle Damage
+	
+    save_veh_fuel = false; //Save Vehicle fuel state
+    save_veh_damage = false; //Save Vehicle Damage
 	
     save_veh_items[] = {
 		"pickaxe",
@@ -49,9 +51,9 @@ class Life_Settings {
 	};
 
     /* Clothing related settings */
-    clothing_noTP = false;  //Disable clothing preview teleport? (true = no teleport. false = teleport)
+    clothing_noTP = true; //Disable clothing preview teleport? (true = no teleport. false = teleport)
 
-    clothing_box = true; //true = teleport to a black box. false = teleport to somewhere on map. (It only affects the game if clothing_noTP is set as false)
+    clothing_box = false; //true = teleport to a black box. false = teleport to somewhere on map. (It only affects the game if clothing_noTP is set as false)
 	
     clothing_masks[] = {
 		"H_Shemag_olive",
@@ -94,7 +96,7 @@ class Life_Settings {
     allow_medic_weapons = true; // true allows medics to hold/use weapons - false disallows
 
     /* Revive system settings */
-    revive_cops = false; //true to enable cops the ability to revive everyone or false for only medics/ems.
+    revive_cops = true; //true to enable cops the ability to revive everyone or false for only medics/ems.
     revive_fee = 15000; //Revive fee that players have to pay and medics / EMS are rewarded
 
     /* House related settings */
@@ -104,22 +106,22 @@ class Life_Settings {
     donor_level = false; //Enable the donor level set in database (var = life_donorlevel; levels = 0,1,2,3,4,5). ATTENTION! Before enabling, read: https://www.bistudio.com/community/game-content-usage-rules
 
     /* Gang related settings */
-    gang_price = 75000; //Price for creating a gang, remember they are persistent so keep it reasonable to avoid millions of gangs.
+    gang_price = 150000; //Price for creating a gang, remember they are persistent so keep it reasonable to avoid millions of gangs.
     gang_upgradeBase = 10000; //The base cost for upgrading slots in a gang
     gang_upgradeMultiplier = 2.5; //Not sure if in use?
 
     /* Player-related systems */
     enable_fatigue = true; //Set to false to disable the ARMA 3 fatigue system.
-    total_maxWeight = 24; //Static variable for the maximum weight allowed without having a backpack
-    paycheck_period = 5; //Scaled in minutes
+    total_maxWeight = 48; //Static variable for the maximum weight allowed without having a backpack
+    paycheck_period = 10; //Scaled in minutes
 
     /* Impound Variables */
-    impound_car = 350; //Price for impounding cars
-    impound_boat = 250; //Price for impounding boats
-    impound_air = 850; //Price for impounding helicopters / planes
+    impound_car = 3500; //Price for impounding cars
+    impound_boat = 2500; //Price for impounding boats
+    impound_air = 8500; //Price for impounding helicopters / planes
 
     /* Initial Bank Amount */
-    bank_cop = 50000; //Amount of cash on bank for new cops
+    bank_cop = 500000; //Amount of cash on bank for new cops
     bank_civ = 100000; //Amount of cash on bank for new civillians
     bank_med = 200000; //Amount of cash on bank for new medics
 

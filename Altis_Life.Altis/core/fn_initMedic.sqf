@@ -103,4 +103,4 @@ if((str(player) in ["adac_1","adac_2","adac_3","adac_4"])) then {
 waitUntil{!isNull (findDisplay 38500)}; //Wait for the spawn selection to be open.
 waitUntil{isNull (findDisplay 38500)}; //Wait for the spawn selection to be done.
 
-playSound ["welcome2",false];
+[] spawn life_fnc_autoSave;

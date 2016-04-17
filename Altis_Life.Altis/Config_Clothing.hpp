@@ -306,8 +306,7 @@ class Clothing {
         uniforms[] = {
             { "NONE", "Remove Uniform", 0, { "", "", -1 } },
             { "U_Rangemaster", "EMS Uniform", 50, { "", "", -1 } },
-			{ "U_B_HeliPilotCoveralls", "ADAC Uniform", 50, { "", "", -1 } },
-			{ "U_O_OfficerUniform_ocamo", "Rettung Uniform", 50, { "", "", -1 } },
+			{ "U_B_HeliPilotCoveralls", "ADAC Uniform", 50, { "", "", -1 } }
         };
         headgear[] = {
             { "NONE", "Remove Hat", 0, { "", "", -1 } },

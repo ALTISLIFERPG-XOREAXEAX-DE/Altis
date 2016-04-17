@@ -14,18 +14,15 @@ playSound ["welcome",false];
 
 any=[
 	[
-		["# XOR $EAX,$EAX","<t align = 'center' size = '1'>%1</t><br/>"],
-		["# XOR $EBX,$EBX","<t align = 'center' size = '1'>%1</t><br/>"],
-		["# XOR $ECX,$ECX","<t align = 'center' size = '1'>%1</t><br/>"],
-		["# XOR $EDX,$EDX","<t align = 'center' size = '1'>%1</t><br/>"]
+		["# XOR $EAX,$EAX","<t align = 'center' size = '1'>%1</t><br/>"]
 	]
 ] spawn BIS_fnc_typeText;
 
-sleep 5;
+sleep 2;
 titleText ["","black out",3];
 waitUntil {camCommitted _camera};
 
-sleep 5;
+sleep 2;
 titleText ["","Black IN",4];
 _camera cameraEffect ["terminate","back"];
 camDestroy _camera;
@@ -34,7 +31,7 @@ camDestroy _camera;
 // Text Intro
 //
 
-_onScreenTime = 3;
+_onScreenTime = 1;
 
 _role1 = "Home of the [XOREAXEAX] gang.";
 _role1names = ["powered by github.com/armalife"];
@@ -46,7 +43,7 @@ _role3 = "Unsere Homepage:";
 _role3names = ["xoreaxeax.de"];
 
 _role4 = "Server-Admins";
-_role4names = ["Dr. Sommer","Don Promillo","B. Parker","M. Coleman"];
+_role4names = ["Dr. M. Sommer","B. Parker","M. Coleman"];
 
 _role5 = "Polizeidirektion";
 _role5names = ["Semir Gerkhan"];
@@ -59,6 +56,8 @@ _role7names = ["9mmfullclip@gmail.com"];
 
 _role8 = "Und jetzt ...";
 _role8names = ["... ab ins Getümmel!"];
+
+playSound ["welcome2",false];
 
 {
 	sleep 3;

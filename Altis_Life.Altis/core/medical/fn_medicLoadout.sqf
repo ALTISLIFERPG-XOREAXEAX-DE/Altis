@@ -11,34 +11,7 @@ private["_handle"];
 _handle = [] spawn life_fnc_stripDownPlayer;
 waitUntil {scriptDone _handle};
 
-if (FETCH_CONST(life_adminlevel) == 0) then {
-	player addUniform "U_Rangemaster";
-
-	player addItem "FirstAidKit";
-	player addItem "FirstAidKit";
-
-	player addItem "ItemMap";
-	player assignItem "ItemMap";
-
-	player addItem "ItemCompass";
-	player assignItem "ItemCompass";
-
-	player addItem "ItemWatch";
-	player assignItem "ItemWatch";
-
-	player addItem "ItemGPS";
-	player assignItem "ItemGPS";
-
-	player addItem "MediKit";
-
-	player addItem "ToolKit";
-	player addItem "ToolKit";
-	
-	player addItem "NVGoggles";
-	player assignItem "NVGoggles";
-} else {
-	player addUniform "U_C_Scientist";
-
+if (FETCH_CONST(life_adminlevel) > 1) then {
 	player addItem "FirstAidKit";
 	player addItem "FirstAidKit";
 	
@@ -66,6 +39,8 @@ if (FETCH_CONST(life_adminlevel) == 0) then {
 
 	player addItem "NVGoggles_OPFOR";
 	player assignItem "NVGoggles_OPFOR";
+	
+	player addUniform "U_Marshal";
 };
 
 [] call life_fnc_playerSkins;

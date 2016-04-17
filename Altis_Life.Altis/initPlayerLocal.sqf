@@ -19,11 +19,6 @@ if(EQUAL(LIFE_SETTINGS(getNumber,"spyglass_init"),1)) then {[] execVM "SpyGlass\
 
 [] execVM "core\init.sqf";
 
-//
-// save gear every 5 minutes
-//
-[] spawn life_fnc_autoSave;
-
 if(hasInterface)then {
 	waitUntil {time > 0};
 	group player selectLeader player;
