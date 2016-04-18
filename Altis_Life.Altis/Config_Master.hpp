@@ -96,18 +96,18 @@ class Life_Settings {
     allow_medic_weapons = true; // true allows medics to hold/use weapons - false disallows
 
     /* Revive system settings */
-    revive_cops = true; //true to enable cops the ability to revive everyone or false for only medics/ems.
-    revive_fee = 15000; //Revive fee that players have to pay and medics / EMS are rewarded
+    revive_cops = false; //true to enable cops the ability to revive everyone or false for only medics/ems.
+    revive_fee = 50000; //Revive fee that players have to pay and medics / EMS are rewarded
 
     /* House related settings */
-    house_limit = 3; //Maximum amount of houses a player can own.
+    house_limit = 5; //Maximum amount of houses a player can own.
 
     /* Donor related settings */
     donor_level = false; //Enable the donor level set in database (var = life_donorlevel; levels = 0,1,2,3,4,5). ATTENTION! Before enabling, read: https://www.bistudio.com/community/game-content-usage-rules
 
     /* Gang related settings */
-    gang_price = 150000; //Price for creating a gang, remember they are persistent so keep it reasonable to avoid millions of gangs.
-    gang_upgradeBase = 10000; //The base cost for upgrading slots in a gang
+    gang_price = 1500000; //Price for creating a gang, remember they are persistent so keep it reasonable to avoid millions of gangs.
+    gang_upgradeBase = 100000; //The base cost for upgrading slots in a gang
     gang_upgradeMultiplier = 2.5; //Not sure if in use?
 
     /* Player-related systems */
@@ -116,9 +116,9 @@ class Life_Settings {
     paycheck_period = 10; //Scaled in minutes
 
     /* Impound Variables */
-    impound_car = 3500; //Price for impounding cars
+    impound_car = 35000; //Price for impounding cars
     impound_boat = 2500; //Price for impounding boats
-    impound_air = 8500; //Price for impounding helicopters / planes
+    impound_air = 850000; //Price for impounding helicopters / planes
 
     /* Initial Bank Amount */
     bank_cop = 500000; //Amount of cash on bank for new cops

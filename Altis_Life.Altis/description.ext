@@ -101,23 +101,6 @@ class CfgSounds
 		sound[] = {"\custom\sounds\car\lock.ogg", 0.5, 1};
 		titles[] = {};
 	};
-
-	class welcome
-	{
-		name = "welcome";
-		sound[] = {"\custom\sounds\intro\welcome.ogg", 1.0, 1};
-		titles[] = {};
-	};
-
-	//
-	// medics
-	//
-	class welcome2
-	{
-		name = "welcome2";
-		sound[] = {"\custom\sounds\intro\welcome2.ogg", 1.0, 1};
-		titles[] = {};
-	};
 	
 	class Cocaine_sound
 	{
@@ -130,6 +113,42 @@ class CfgSounds
 	{
 		name = "Weed_sound";
 		sound[] = {"\custom\sounds\drugs\Weed_sound.ogg", 1.0, 1};
+		titles[] = {};
+	};
+	
+	//
+	// intro sounds. made with audacity and using downloaded samples from youtube videos.
+	//
+	
+	// Dune.
+	class welcome_teaser
+	{
+		name = "welcome_teaser";
+		sound[] = {"\custom\sounds\intro\welcome_teaser.ogg", 1.0, 1};
+		titles[] = {};
+	};
+
+	// from the original bug powder dust (not the K+D one)
+	class welcome_sample
+	{
+		name = "welcome_sample";
+		sound[] = {"\custom\sounds\intro\welcome_sample.ogg", 1.0, 1};
+		titles[] = {};
+	};
+	
+	// Falco. Epic.
+	class welcome_cops
+	{
+		name = "welcome_cops";
+		sound[] = {"\custom\sounds\intro\welcome_cops.ogg", 1.0, 1};
+		titles[] = {};
+	};
+	
+	// admins get their own trailer
+	class welcome_admins
+	{
+		name = "welcome_admins";
+		sound[] = {"\custom\sounds\intro\welcome_admins.ogg", 1.0, 1};
 		titles[] = {};
 	};
 };

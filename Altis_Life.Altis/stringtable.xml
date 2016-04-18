@@ -4803,12 +4803,8 @@
       <Polish>Odrodzenie możliwe za: %1</Polish>
     </Key>
     <Key ID="STR_Medic_Respawn_2">
-      <Original>You can now respawn</Original>
-      <German>Du kannst nun respawnen</German>
-      <French>Vous pouvez désormais réapparaître</French>
-      <Italian>Puoi ora fare respawn</Italian>
-      <Portuguese>Você pode dar respawn</Portuguese>
-      <Polish>Możesz się odrodzić</Polish>
+      <Original>Notice: you have to press the medic button twice to call for a medic!</Original>
+      <German>Achtung: Der Notruf wird erst beim zweiten Mal drücken aktiviert!</German>
     </Key>
     <Key ID="STR_Medic_RevivePay">
       <Original>%1 has revived you and a fee of $%2 was taken from your bank account for their services.</Original>
@@ -5326,8 +5322,8 @@
       <Polish>Nie wybrałeś ubrań które chcesz kupić.</Polish>
     </Key>
     <Key ID="STR_Shop_NotEnoughClothes">
-      <Original>Sorry sir, you don't have enough money to buy those clothes.</Original>
-      <German>Entschuldigung, du hast nicht genug Geld, um diese Kleidung zu kaufen.</German>
+      <Original>Sorry Sir, you don't have enough money to buy those clothes.</Original>
+      <German>Entschuldigung, Du hast nicht genug Geld, um diese Kleidung zu kaufen.</German>
       <French>Désolé monsieur, vous n'avez pas assez d'argent pour acheter ces vêtements.</French>
       <Italian>Spiacente ma non hai fondi a sufficienza per comprare questi vestiti.</Italian>
       <Portuguese>Desculpe senhor, você não tem dinheiro para pagar. Volte sempre.</Portuguese>

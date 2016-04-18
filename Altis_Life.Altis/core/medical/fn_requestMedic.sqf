@@ -24,3 +24,10 @@ if(_medicsOnline) then {
 	sleep (20);
 	((findDisplay 7300) displayCtrl 7303) ctrlEnable true;
 };
+
+//Disable respawn button once he requested a medic.
+[] spawn  {
+	((findDisplay 7300) displayCtrl 7302) ctrlEnable false;
+	sleep (300);
+	((findDisplay 7300) displayCtrl 7302) ctrlEnable true;
+};
