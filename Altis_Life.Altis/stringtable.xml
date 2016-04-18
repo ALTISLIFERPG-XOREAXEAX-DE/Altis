@@ -742,7 +742,7 @@
     </Key>
     <Key ID="STR_CELL_AdminMsg">
       <Original>Admin Message</Original>
-      <German>Admin-Nachricht</German>
+      <German>Admin Message</German>
       <French>Admin Message</French>
       <Italian>Admin Msg</Italian>
       <Portuguese>Admin Msg</Portuguese>
@@ -750,11 +750,7 @@
     </Key>
     <Key ID="STR_CELL_AdminMSGAll">
       <Original>Admin Msg All</Original>
-      <German>Admin-Nachricht an alle</German>
-      <French>Admin Msg ALL</French>
-      <Italian>Admin Msg</Italian>
-      <Portuguese>Admin Msg All</Portuguese>
-      <Polish>SMS do Wszyscy</Polish>
+      <German>Rundmeldung</German>
     </Key>
     <Key ID="STR_CELL_EMSRequest">
       <Original>Request EMS</Original>

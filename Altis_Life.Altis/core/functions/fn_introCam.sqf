@@ -127,7 +127,7 @@ _role3 = "Unsere Homepage:";
 _role3names = ["xoreaxeax.de"];
 
 _role4 = "Server-Admins";
-_role4names = ["Dr. M. Sommer","B. Parker","M. Coleman"];
+_role4names = ["[XOR] Dr. M. Sommer","[DHS] B. Parker","[AVS] Matthew C.", "[AL] Skipper"];
 
 _role5 = "Polizeidirektion";
 _role5names = ["Semir Gerkhan"];
