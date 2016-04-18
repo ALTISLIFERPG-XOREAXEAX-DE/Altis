@@ -89,7 +89,8 @@ class CarShops {
         side = "med";
         vehicles[] = {
             { "C_Offroad_01_F", { "", "", -1 } },
-			{ "C_SUV_01_F", { "life_mediclevel", "SCALAR", 3 } },
+			{ "C_SUV_01_F", { "life_mediclevel", "SCALAR", 2 } },
+			{ "C_Hatchback_01_sport_F", { "life_mediclevel", "SCALAR", 3 } },
 			{ "B_MRAP_01_F", { "life_mediclevel", "SCALAR", 4 } },
 			{ "B_Truck_01_mover_F", { "life_mediclevel", "SCALAR", 4 } } // Abschleppfahrzeug Igiload
 			
@@ -390,7 +391,7 @@ will modify the virtual space and the price of the vehicle, but other informatio
     class C_Hatchback_01_sport_F {
         vItemSpace = 45;
         licenses[] = { {"driver"}, {""}, {""}, {""} };
-        rentalprice[] = { 40000, 30000, -1, -1 };
+        rentalprice[] = { 40000, 30000, 3000, 3000 };
         textures[] = {
             { "Red", "civ", {
                 "\a3\soft_f_gamma\Hatchback_01\data\hatchback_01_ext_sport01_co.paa"
@@ -415,7 +416,10 @@ will modify the virtual space and the price of the vehicle, but other informatio
             } },
             { "Polizei", "cop", {
                 "textures\vehicles\cop\hatchback\polizei.jpg"
-            } }			
+            } },
+            { "Rettung", "med", {
+                "textures\vehicles\med\hatchback\rettung.jpg"
+            } }
         };
     };
 
