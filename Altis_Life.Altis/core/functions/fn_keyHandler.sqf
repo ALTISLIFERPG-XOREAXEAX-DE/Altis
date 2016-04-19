@@ -100,6 +100,20 @@ switch (_code) do {
 				player selectWeapon life_curWep_h;
 			};
 		};
+
+		//
+		// H Taste fuer Polizei
+		//
+		if (playerSide == west) then {
+			if (vehicle player != player) then {
+				_veh = vehicle player;
+				if (typeOf _veh == "B_MRAP_01_F") then {
+					[_veh] remoteExec ["life_fnc_copSiren3",RCLIENT];
+				} else {
+					[_veh] remoteExec ["life_fnc_copSiren2",RCLIENT];
+				};
+			};
+		};
 		
 		//
 		// H Taste fuer Zivilisten
@@ -131,7 +145,10 @@ switch (_code) do {
 				};
 			};
 		};
-		
+
+		//
+		// H Taste fuer Rettungseinsatz
+		//
 		if (playerSide == independent) then {
 			if (_shift) then {
 				if(!life_action_inUse) then {
@@ -200,6 +217,7 @@ switch (_code) do {
 		if(_shift) then {_handled = true;};
 		if(_shift && playerSide == west && {!isNull cursorTarget} && {cursorTarget isKindOf "Man"} && {(isPlayer cursorTarget)} && {alive cursorTarget} && {cursorTarget distance player < 3.5} && {!(cursorTarget GVAR "Escorting")} && {!(cursorTarget GVAR "restrained")} && {speed cursorTarget < 1}) then {
 			[] call life_fnc_restrainAction;
+			player say3D "handcuffs";
 		};
 		
 		if(_shift && playerSide == civilian && {!isNull cursorTarget} && {cursorTarget isKindOf "Man"} && {(isPlayer cursorTarget)} && {alive cursorTarget} && {cursorTarget distance player < 3.5} && {!(cursorTarget GVAR "Escorting")} && {!(cursorTarget GVAR "restrained")} && {speed cursorTarget < 1}) then {
@@ -210,6 +228,7 @@ switch (_code) do {
 				if((animationState cursorTarget) == "Incapacitated") then {
 					if(([false,"zipties",1] call life_fnc_handleInv)) then {
 						[] call life_fnc_restrainAction;
+						player say3D "handcuffs";
 					};
 				};
 			};
@@ -255,8 +274,8 @@ switch (_code) do {
 	case 38: {
 		//If cop run checks for turning lights on.
 		if(_shift && playerSide in [west,independent]) then {
-			if(vehicle player != player && (typeOf vehicle player) in ["C_Offroad_01_F","B_MRAP_01_F","C_SUV_01_F","C_Hatchback_01_sport_F","B_Heli_Light_01_F","B_Heli_Transport_01_F"]) then {
-				if(!isNil {vehicle player GVAR "lights"}) then {
+			if(vehicle player != player && (typeOf vehicle player) in ["C_Offroad_01_F","B_MRAP_01_F","C_SUV_01_F","C_Hatchback_01_sport_F","B_Heli_Light_01_F","B_Heli_Transport_01_F","I_MRAP_03_F","B_Truck_01_mover_F"]) then {
+				if(!isNil {vehicle player GVAR "lights"}) then {					
 					if(playerSide == west) then {
 						[vehicle player] call life_fnc_sirenLights;
 					} else {

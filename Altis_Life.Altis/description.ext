@@ -151,6 +151,28 @@ class CfgSounds
 		sound[] = {"\custom\sounds\intro\welcome_admins.ogg", 1.0, 1};
 		titles[] = {};
 	};
+	
+	//
+	// Polizei Sounds
+	//
+	class polizei_rp
+	{
+		name = "polizei_rp";
+		sound[] = {"\custom\sounds\polizei\polizei_rp.ogg", 1.0, 1};
+		titles[] = {};
+	};
+	class polizei_sek
+	{
+		name = "polizei_sek";
+		sound[] = {"\custom\sounds\polizei\polizei_sek.ogg", 1.0, 1};
+		titles[] = {};
+	};
+	class handcuffs
+	{
+		name = "handcuffs";
+		sound[] = {"\custom\sounds\polizei\handcuffs.ogg", 1.0, 1};
+		titles[] = {};
+	};
 };
 
 class CfgDebriefing

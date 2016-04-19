@@ -276,6 +276,8 @@ class Life_Client_Core
 		class ticketPay {};
 		class ticketPrompt {};
 		class copSiren {};
+		class copSiren2 {}; // Polizei RP Warnung
+		class copSiren3 {}; // Polizei SEK Warnung
 		class spikeStripEffect {};
 		class radar {};
 		class questionDealer {};
