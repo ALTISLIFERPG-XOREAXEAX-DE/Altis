@@ -154,6 +154,10 @@
       <Original>EMS Market</Original>
       <German>EMS Markt</German>
     </Key>
+    <Key ID="STR_Shops_Admin">
+      <Original>Admin Market</Original>
+      <German>Admin Markt</German>
+    </Key>
     <Key ID="STR_Shops_Cement">
       <Original>Juan's Cement Laying</Original>
       <German>Juan's Zementleger</German>
@@ -4139,6 +4143,10 @@
 	<Key ID="STR_Item_Zipties">
 		<Original>Zipties</Original>
 		<German>Kabelbinder</German>
+	</Key>
+	<Key ID="STR_Item_Money">
+		<Original>Money</Original>
+		<German>Knete</German>
 	</Key>
   </Package>
   <Package name="Life_License">

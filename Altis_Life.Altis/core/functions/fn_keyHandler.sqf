@@ -320,7 +320,11 @@ switch (_code) do {
 				if(playerSide == west) then {
 					[_veh] remoteExec ["life_fnc_copSiren",RCLIENT];
 				} else {
-					[_veh] remoteExec ["life_fnc_medicSiren",RCLIENT];
+					if (typeOf _veh == "B_Truck_01_mover_F") then {
+						[_veh] remoteExec ["life_fnc_medicSiren2",RCLIENT];
+					} else {
+						[_veh] remoteExec ["life_fnc_medicSiren",RCLIENT];
+					};
 				};
 			};
 		};

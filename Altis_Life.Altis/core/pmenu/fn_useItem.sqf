@@ -37,6 +37,14 @@ switch (true) do {
 		};
 	};
 
+	case (EQUAL(_item,"money")): {
+		if(vehicle player == player) then {
+			if(([false,_item,1] call life_fnc_handleInv)) then {
+				ADD(CASH,99900);
+			};
+		};
+	};
+	
 	case (EQUAL(_item,"marijuana")): {
 		if(vehicle player == player) then {
 			if(([false,_item,1] call life_fnc_handleInv)) then {

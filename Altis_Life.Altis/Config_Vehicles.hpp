@@ -92,9 +92,11 @@ class CarShops {
 			{ "C_SUV_01_F", { "life_mediclevel", "SCALAR", 2 } },
 			{ "C_Hatchback_01_sport_F", { "life_mediclevel", "SCALAR", 3 } },
 			{ "B_MRAP_01_F", { "life_mediclevel", "SCALAR", 4 } },
-			{ "B_Truck_01_mover_F", { "life_mediclevel", "SCALAR", 4 } } // Abschleppfahrzeug Igiload
-			
-        };
+			{ "B_Truck_01_mover_F", { "life_mediclevel", "SCALAR", 4 } }, // Abschleppfahrzeug Igiload
+			{ "B_Truck_01_ammo_F", { "life_mediclevel", "SCALAR", 4 } },
+			{ "O_Truck_03_ammo_F", { "life_mediclevel", "SCALAR", 4 } },
+			{ "O_Truck_03_repair_F ", { "life_mediclevel", "SCALAR", 4 } }
+		};
     };
 
     class med_air_hs {
@@ -202,7 +204,29 @@ class LifeCfgVehicles {
             } },
 		};
     };
+
+    class B_Truck_01_ammo_F {
+        vItemSpace = 500;
+        licenses[] = { {""}, {""}, {""}, {""} };
+        rentalprice[] = { -1, -1, 60000, -1 };		
+        textures[] = {};
+    };
+
+    class O_Truck_03_repair_F {
+        vItemSpace = 400;
+        licenses[] = { {""}, {""}, {""}, {""} };
+        rentalprice[] = { -1, -1, 60000, -1 };		
+        textures[] = {};
+    };
+
+    class O_Truck_03_ammo_F {
+        vItemSpace = 400;
+        licenses[] = { {""}, {""}, {""}, {""} };
+        rentalprice[] = { -1, -1, 60000, -1 };		
+        textures[] = {};
+    };
 	
+
     class C_Rubberboat {
         vItemSpace = 45;
         licenses[] = { {"boat"}, {""}, {""}, {""} };
@@ -214,7 +238,12 @@ class LifeCfgVehicles {
         vItemSpace = 200;
         licenses[] = { {""}, {"cAir"}, {""}, {""} };
         rentalprice[] = { -1, 200000, -1, -1 };
-        textures[] = {};
+        textures[] = {
+			{ "SEK", "cop", {
+                "textures\air\cop\ghosthawk\sek_front.paa",
+                "textures\air\cop\ghosthawk\sek_hinten.paa"
+			} }
+		};
     };
 
     class B_MRAP_01_hmg_F {
@@ -245,7 +274,7 @@ class LifeCfgVehicles {
     };
 
     class O_Truck_03_transport_F {
-        vItemSpace = 285;
+        vItemSpace = 300;
         licenses[] = { {"trucking"}, {""}, {""}, {""} };
         rentalprice[] = { 200000, -1, -1, -1 };
         textures[] = { };
@@ -489,9 +518,9 @@ will modify the virtual space and the price of the vehicle, but other informatio
     };
 
     class O_Truck_03_covered_F {
-        vItemSpace = 300;
+        vItemSpace = 400;
         licenses[] = { {"trucking"}, {""}, {""}, {""} };
-        rentalprice[] = { 250000, -1, -1, -1 };
+        rentalprice[] = { 400000, -1, -1, -1 };
         textures[] = {};
     };
 

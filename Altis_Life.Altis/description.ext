@@ -151,7 +151,17 @@ class CfgSounds
 		sound[] = {"\custom\sounds\intro\welcome_admins.ogg", 1.0, 1};
 		titles[] = {};
 	};
-	
+
+	//
+	// Medic Sounds und ADAC Sounds
+	//
+	class medicSiren2
+	{
+		name = "medicSiren2";
+		sound[] = {"\custom\sounds\adac\medic_siren2.ogg", 1.0, 1};
+		titles[] = {};
+	};
+
 	//
 	// Polizei Sounds
 	//

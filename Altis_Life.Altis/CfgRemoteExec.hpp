@@ -26,6 +26,7 @@ class CfgRemoteExec {
 		F(life_fnc_copSiren2,CLIENT)
 		F(life_fnc_copSiren3,CLIENT)
         F(life_fnc_medicSiren,CLIENT)
+		F(life_fnc_medicSiren2,CLIENT)
         F(life_fnc_giveDiff,CLIENT)
         F(life_fnc_gangInvite,CLIENT)
         F(TON_fnc_clientGangKick,CLIENT)
