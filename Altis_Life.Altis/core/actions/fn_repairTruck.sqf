@@ -33,7 +33,7 @@ if((_veh isKindOf "Car") OR (_veh isKindOf "Ship") OR (_veh isKindOf "Air")) the
 				player playMoveNow "AinvPknlMstpSnonWnonDnon_medic_1";
 			};
 
-			sleep 0.27;
+			sleep 2;
 			_cP = _cP + 0.01;
 			_progress progressSetPosition _cP;
 			_pgText ctrlSetText format["%3 (%1%2)...",round(_cP * 100),"%",_upp];
@@ -50,43 +50,7 @@ if((_veh isKindOf "Car") OR (_veh isKindOf "Ship") OR (_veh isKindOf "Air")) the
 		if(player != vehicle player) exitWith {titleText[localize "STR_NOTF_ActionInVehicle","PLAIN"];};
 		player removeItem "ToolKit";
 
-		//
-		// https://resources.bisimulations.com/wiki/Damage_Modeling:_Objects:_Vehicles#HitLBWheel
-		//
-
-		if(_veh isKindOf "Car") then {
-			if ((_veh getHitPointDamage "HitLFWheel") > 0.5) then {
-				_veh setHitPointDamage["HitLFWheel",0.4];
-				
-				titleText[localize "STR_NOTF_RepairedVehiclePartly","PLAIN"];
-			} else {
-				if ((_veh getHitPointDamage "HitRFWheel") > 0.5) then {
-					_veh setHitPointDamage["HitRFWheel",0.4];
-					
-					titleText[localize "STR_NOTF_RepairedVehiclePartly","PLAIN"];
-				} else {
-					if ((_veh getHitPointDamage "HitLBWheel") > 0.5) then {
-						_veh setHitPointDamage["HitLBWheel",0.4];
-						_veh setDamage 0.5;
-						_veh setHitPointDamage["HitRBWheel",1];
-						
-						titleText[localize "STR_NOTF_RepairedVehiclePartlyLB","PLAIN"];
-					} else {
-					if ((_veh getHitPointDamage "HitRBWheel") > 0.5) then {
-						_veh setHitPointDamage["HitRBWheel",0.4];
-						_veh setDamage 0.25;
-
-						titleText[localize "STR_NOTF_RepairedVehiclePartlyRB","PLAIN"];
-					} else {
-						_veh setDamage 0;
-						titleText[localize "STR_NOTF_RepairedVehicle","PLAIN"];
-					};
-				};
-			};
-		};
-		} else {
-			_veh setDamage 0;			
-			titleText[localize "STR_NOTF_RepairedVehicle","PLAIN"];
-		};
+		_veh setDamage 0;			
+		titleText[localize "STR_NOTF_RepairedVehicle","PLAIN"];
 	};
 };

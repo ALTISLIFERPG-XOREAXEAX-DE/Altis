@@ -81,6 +81,7 @@ class CarShops {
             { "O_MRAP_02_F", { "", "", -1 } },
             { "B_Heli_Light_01_stripped_F", { "", "", -1 } },
             { "B_G_Offroad_01_armed_F", { "", "", -1 } },
+			{ "O_MRAP_02_hmg_F", { "", "", -1 } },
 			{ "I_Heli_light_03_unarmed_F", { "", "", -1 } }
         };
     };
@@ -322,6 +323,13 @@ class LifeCfgVehicles {
         textures[] = { };
     };
 
+    class O_MRAP_02_hmg_F {
+        vItemSpace = 130;
+        licenses[] = { {"rebel"}, {""}, {""}, {""} };
+        rentalprice[] = { 1750000, -1, -1, -1 };
+        textures[] = { };
+    };
+	
     class C_Boat_Civil_01_F {
         vItemSpace = 85;
         licenses[] = { {"boat"}, {""}, {""}, {""} };
