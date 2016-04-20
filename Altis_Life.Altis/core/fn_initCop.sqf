@@ -40,17 +40,7 @@ if(FETCH_CONST(life_coplevel) == 0) then {
 //
 // Einsatzuniform (SEK oder COP, je nach Rang)
 //
-if(FETCH_CONST(life_coplevel) == 1) then {
-	[] spawn {
-		while {true} do {
-			waitUntil {uniform player == "U_B_CombatUniform_mcam_worn"};
-			player setObjectTextureGlobal [0, "textures\clothing\cop\polizei_weiss.jpg"];
-			waitUntil {uniform player != "U_B_CombatUniform_mcam_worn"};
-		};
-	};
-};
-
-if(FETCH_CONST(life_coplevel) == 2) then {
+if(FETCH_CONST(life_coplevel) < 3 ) then {
 	[] spawn {
 		while {true} do {
 			waitUntil {uniform player == "U_B_CombatUniform_mcam_worn"};
@@ -90,7 +80,17 @@ if(FETCH_CONST(life_coplevel) == 5) then {
 	};
 };
 
-if(FETCH_CONST(life_coplevel) > 5) then {
+if(FETCH_CONST(life_coplevel) == 6) then {
+	[] spawn {
+		while {true} do {
+			waitUntil {uniform player == "U_B_CombatUniform_mcam_worn"};
+			player setObjectTextureGlobal [0, "textures\clothing\cop\sek_rot_schwarz.jpg"];
+			waitUntil {uniform player != "U_B_CombatUniform_mcam_worn"};
+		};
+	};
+};
+
+if(FETCH_CONST(life_coplevel) == 7) then {
 	[] spawn {
 		while {true} do {
 			waitUntil {uniform player == "U_B_CombatUniform_mcam_worn"};

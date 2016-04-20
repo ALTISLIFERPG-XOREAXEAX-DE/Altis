@@ -2540,13 +2540,21 @@
       <Polish>Nie możesz tego wykonać z wntrza pojazdu!</Polish>
     </Key>
     <Key ID="STR_NOTF_RepairedVehicle">
-      <Original>You have repaired that vehicle.</Original>
-      <German>Du hast dieses Fahrzeug repariert.</German>
-      <French>You have repaired that vehicle.</French>
-      <Italian>You have repaired that vehicle.</Italian>
-      <Portuguese>Você reparou esse veículo.</Portuguese>
-      <Polish>Naprawiłeś pojazd</Polish>
+      <Original>Vehicle has been repaired.</Original>
+      <German>Fahrzeug ist tipp topp!</German>
     </Key>
+    <Key ID="STR_NOTF_RepairedVehiclePartly">
+      <Original>Front Tire fixed.</Original>
+      <German>Vorderrad geflickt.</German>
+    </Key>
+    <Key ID="STR_NOTF_RepairedVehiclePartlyLB">
+      <Original>Left Back Tire fixed.</Original>
+      <German>Hinterrad links geflickt.</German>
+    </Key>
+    <Key ID="STR_NOTF_RepairedVehiclePartlyRB">
+      <Original>Right Back Tire fixed.</Original>
+      <German>Hinterrad rechts geflickt.</German>
+    </Key>	
     <Key ID="STR_NOTF_Gather_Success">
       <Original>You have gathered %2 %1(s)</Original>
       <German>Du hast %2 %1(s) gesammelt</German>

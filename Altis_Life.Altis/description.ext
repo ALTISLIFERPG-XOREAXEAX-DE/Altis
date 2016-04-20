@@ -183,6 +183,13 @@ class CfgSounds
 		sound[] = {"\custom\sounds\polizei\handcuffs.ogg", 1.0, 1};
 		titles[] = {};
 	};
+
+	class car_crash
+	{
+		name = "car_crash";
+		sound[] = {"\custom\sounds\polizei\car_crash.ogg", 1.0, 1};
+		titles[] = {};
+	};	
 };
 
 class CfgDebriefing

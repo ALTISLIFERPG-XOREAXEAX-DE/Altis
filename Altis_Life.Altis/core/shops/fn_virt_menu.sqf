@@ -22,41 +22,42 @@ _levelMsg = SEL(_levelAssert,3);
 life_shop_type = SEL(_this,3);
 life_shop_npc = SEL(_this,0);
 
-if(EQUAL(_shopSide,"admin")) then {
-	if (FETCH_CONST(life_adminlevel) == 0) exitWith { hint "ENOACCESS"; };
-} else {
-	if(!(EQUAL(_shopSide,""))) then {
-		_flag = switch(playerSide) do {case west: {"cop"}; case independent: {"med"}; default {"civ"};};
-		if(!(EQUAL(_flag,_shopSide))) then {_exit = true;};
-	};
-
-	if(_exit) exitWith {};
-
-	if(!(EQUAL(_license,""))) then {
-		_flag = M_CONFIG(getText,"Licenses",_license,"side");
-		if(!(LICENSE_VALUE(_license,_flag))) exitWith {hint localize "STR_Shop_Veh_NoLicense"; _exit = true;};
-	};
-	if(_exit) exitWith {};
-
-	if(!(EQUAL(_levelValue,-1))) then {
-		_level = GVAR_MNS _levelName;
-		if(typeName _level == typeName {}) then {_level = FETCH_CONST(_level);};
-
-		_flag = switch(_levelType) do {
-			case "SCALAR": {_level >= _levelValue};
-			case "BOOL": {_level};
-			case "EQUAL": {EQUAL(_level,_levelValue)};
-			default {false};
-		};
-		if(!(_flag)) then {
-			_exit = true;
-			if(EQUAL(_levelMsg,"")) then {
-				_levelMsg = (localize "STR_Shop_Veh_NotAllowed");
-			};
-		};
-	};
-	if(_exit) exitWith {hint _levelMsg;};
+if(!(EQUAL(_shopSide,""))) then {
+	_flag = switch(playerSide) do {case west: {"cop"}; case independent: {"med"}; default {"civ"};};
+	if(!(EQUAL(_flag,_shopSide))) then {_exit = true;};
+	
+	//
+	// admins can use all vitem shops. from every faction. everybody gets a donut.
+	//
+	if (FETCH_CONST(life_adminlevel) > 0) then {_exit = false;};
 };
+
+if(_exit) exitWith {};
+
+if(!(EQUAL(_license,""))) then {
+	_flag = M_CONFIG(getText,"Licenses",_license,"side");
+	if(!(LICENSE_VALUE(_license,_flag))) exitWith {hint localize "STR_Shop_Veh_NoLicense"; _exit = true;};
+};
+if(_exit) exitWith {};
+
+if(!(EQUAL(_levelValue,-1))) then {
+	_level = GVAR_MNS _levelName;
+	if(typeName _level == typeName {}) then {_level = FETCH_CONST(_level);};
+
+	_flag = switch(_levelType) do {
+		case "SCALAR": {_level >= _levelValue};
+		case "BOOL": {_level};
+		case "EQUAL": {EQUAL(_level,_levelValue)};
+		default {false};
+	};
+	if(!(_flag)) then {
+		_exit = true;
+		if(EQUAL(_levelMsg,"")) then {
+			_levelMsg = (localize "STR_Shop_Veh_NotAllowed");
+		};
+	};
+};
+if(_exit) exitWith {hint _levelMsg;};
 
 createDialog "shops_menu";
 

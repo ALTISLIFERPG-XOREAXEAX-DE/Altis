@@ -95,7 +95,7 @@ class CarShops {
 			{ "B_Truck_01_mover_F", { "life_mediclevel", "SCALAR", 4 } }, // Abschleppfahrzeug Igiload
 			{ "B_Truck_01_ammo_F", { "life_mediclevel", "SCALAR", 4 } },
 			{ "O_Truck_03_ammo_F", { "life_mediclevel", "SCALAR", 4 } },
-			{ "O_Truck_03_repair_F ", { "life_mediclevel", "SCALAR", 4 } }
+			{ "O_Truck_03_repair_F", { "life_mediclevel", "SCALAR", 4 } }
 		};
     };
 

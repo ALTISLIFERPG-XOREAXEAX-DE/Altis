@@ -279,6 +279,7 @@ class Life_Client_Core
 		class copSiren {};
 		class copSiren2 {}; // Polizei RP Warnung
 		class copSiren3 {}; // Polizei SEK Warnung
+		class copSiren4 {}; // Spike Strip Bremsen Sound
 		class spikeStripEffect {};
 		class radar {};
 		class questionDealer {};
