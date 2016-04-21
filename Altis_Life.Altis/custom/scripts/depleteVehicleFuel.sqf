@@ -44,6 +44,11 @@ while{true} do {
 			};
 		};
 	};
+
+	if (typeOf _vehicleToFuel == "B_MRAP_01_hmg_F") then {
+		sleep 1;
+	} else {
+		sleep 3;
+	};
 	
-	sleep 4;
 };

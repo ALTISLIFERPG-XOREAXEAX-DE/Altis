@@ -16,94 +16,24 @@ titleText ["","Black IN",4];
 
 playSound ["welcome_teaser",false];
 
-if(FETCH_CONST(life_adminlevel) > 0) then {
-	//
-	// ADMINS
-	//
-	any=[
-		[
-			["# XOR $EAX,$EAX","<t align = 'center' size = '1'>%1</t><br/>"],
-			["Sie wurden als Spieladministrator angemeldet.","<t align = 'center' size = '1'>%1</t><br/>"],
-			["Bitte beachten Sie unbedingt die Serverregeln.","<t align = 'center' size = '1'>%1</t><br/>"],
-			["Admins und Support sind der Polizei im RP nicht weisungsbefugt.","<t align = 'center' size = '1'>%1</t><br/>"],
-			["Seien Sie hilfsbereit, Sie haben eine Vorbildfunktion.","<t align = 'center' size = '1'>%1</t><br/>"],
-			["#1) Respektieren Sie die Rechte der Spieler.","<t align = 'center' size = '1'>%1</t><br/>"],
-			["Niemand darf grundlos ausspioniert werden.","<t align = 'center' size = '1'>%1</t><br/>"],
-			["#2) Denken Sie nach bevor Sie etwas als Admin tun.","<t align = 'center' size = '1'>%1</t><br/>"],
-			["Handeln Sie niemals aus Eigennutz.","<t align = 'center' size = '1'>%1</t><br/>"],
-			["#3) Mit grosser Macht kommt grosse Verantwortung.","<t align = 'center' size = '1'>%1</t><br/>"],
-			["Die Ihnen anvertrauten Rechte werden bei Missbrauch sofort wieder entzogen.","<t align = 'center' size = '1'>%1</t><br/>"],
-			["~~~~~~~~~~~~~~~~~~~~~~~ BITTE WARTEN ~~~~~~~~~~~~~~~~~~~~~~~","<t align = 'center' size = '1'>%1</t><br/>"]
-			
-		]
-	] spawn BIS_fnc_typeText;
+any=[
+	[
+		["# XOR $EAX,$EAX","<t align = 'center' size = '1'>%1</t><br/>"]
+	]
+] spawn BIS_fnc_typeText;
 
-	// has to be adjusted to the length of the text above.
-	sleep 100;
-	
-	titleText ["","black out",3];
-	waitUntil {camCommitted _camera};
+titleText ["","black out",3];
+waitUntil {camCommitted _camera};
 
-	sleep 2;
-	
-	titleText ["","black in",4];
-	_camera cameraEffect ["terminate","back"];
-	camDestroy _camera;
-	
-} else {
-	if(FETCH_CONST(life_coplevel) > 0) then {
-		//
-		// COPS
-		//
-		any=[
-			[
-				["# XOR $EAX,$EAX","<t align = 'center' size = '1'>%1</t><br/>"],
-				["Sie sind in den Polizeidienst eingetreten.","<t align = 'center' size = '1'>%1</t><br/>"],
-				["Halten Sie sich unbedingt an die Serverregeln (Cop-RP).","<t align = 'center' size = '1'>%1</t><br/>"],
-				["Mord an Unbewaffneten und Wehrlosen wird sofort gebannt.","<t align = 'center' size = '1'>%1</t><br/>"],
-				["Weisungen des Polizeichefs ist im TS und im Spiel Folge zu leisten.","<t align = 'center' size = '1'>%1</t><br/>"],
-				["Das gleiche gilt bei Weisungen von Dienstvorgesetzten im Spiel.","<t align = 'center' size = '1'>%1</t><br/>"],
-				["Admins und Support sind der Polizei im RP nicht weisungsbefugt.","<t align = 'center' size = '1'>%1</t><br/>"],
-				["~~~~~~~~~~~~~~~~~~~~~~~ BITTE WARTEN ~~~~~~~~~~~~~~~~~~~~~~~","<t align = 'center' size = '1'>%1</t><br/>"]
-				
-			]
-		] spawn BIS_fnc_typeText;
+sleep 2;
 
-		// has to be adjusted to the length of the text above.
-		sleep 60;
-
-		titleText ["","black out",3];
-		waitUntil {camCommitted _camera};
-	
-		sleep 2;
-	
-		titleText ["","black in",4];
-		_camera cameraEffect ["terminate","back"];
-		camDestroy _camera;
-	} else {
-		any=[
-			[
-				["# XOR $EAX,$EAX","<t align = 'center' size = '1'>%1</t><br/>"]
-			]
-		] spawn BIS_fnc_typeText;
-
-		sleep 4;
-	
-		titleText ["","black out",3];
-		waitUntil {camCommitted _camera};
-	
-		sleep 2;
-	
-		titleText ["","black in",4];
-		_camera cameraEffect ["terminate","back"];
-		camDestroy _camera;
-	};
-};
+titleText ["","black in",4];
+_camera cameraEffect ["terminate","back"];
+camDestroy _camera;
 
 //
-// Text Intro
+// Musikbetten
 //
-
 _onScreenTime = 1;
 
 if(FETCH_CONST(life_adminlevel) > 0) then {
@@ -117,6 +47,9 @@ if(FETCH_CONST(life_adminlevel) > 0) then {
 	};
 };
 
+//
+// (II) Text Intro
+//
 _role1 = "Home of the [XOREAXEAX] gang.";
 _role1names = ["powered by github.com/armalife"];
 

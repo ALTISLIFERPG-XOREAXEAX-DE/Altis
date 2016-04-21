@@ -2304,6 +2304,14 @@
       <Portuguese>%1 foi tazed por %2</Portuguese>
       <Polish>%1 został potraktowany paralizatorem przez %2</Polish>
     </Key>
+    <Key ID="STR_NOTF_Murdered">
+      <Original>%2 has murdered the unarmed civilian %1.</Original>
+      <German>%2 hat den unbewaffneten Zivilisten %1 ermordet.</German>
+      <French>%1 a été tazé par %2</French>
+      <Italian>%1 è stato taserato da %2</Italian>
+      <Portuguese>%1 foi tazed por %2</Portuguese>
+      <Polish>%1 został potraktowany paralizatorem przez %2</Polish>
+    </Key>
     <Key ID="STR_NOTF_VehContraband">
       <Original>A vehicle was searched and has $%1 worth of drugs / contraband.</Original>
       <German>Ein Fahrzeug wurde durchsucht und es wurden Drogen / Schmuggelware im Wert von $%1 gefunden.</German>
