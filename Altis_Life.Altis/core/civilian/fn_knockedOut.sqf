@@ -34,5 +34,11 @@ if (player GVAR ["Escorting",false]) then {
 	deleteVehicle _obj;
 };
 
+player setFatigue 1;
+
+if ((getDammage player) < 0.8) then {
+	player setDamage 0.8;
+};
+
 life_isknocked = false;
 player SVAR ["robbed",FALSE,TRUE];

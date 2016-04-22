@@ -232,6 +232,7 @@ class Life_Client_Core
 		class civMarkers {};
 		class jail {};
 		class tazed {};
+		class stunned {};
 		class knockedOut {};
 		class knockoutAction {};
 		class robReceive {};

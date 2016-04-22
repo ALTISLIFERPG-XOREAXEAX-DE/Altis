@@ -2304,9 +2304,13 @@
       <Portuguese>%1 foi tazed por %2</Portuguese>
       <Polish>%1 został potraktowany paralizatorem przez %2</Polish>
     </Key>
+    <Key ID="STR_NOTF_Stunned">
+      <Original>%1 was stunned by %2</Original>
+      <German>%1 wurde von %2 gestunned</German>
+    </Key>
     <Key ID="STR_NOTF_Murdered">
-      <Original>%2 has murdered the unarmed civilian %1.</Original>
-      <German>%2 hat den unbewaffneten Zivilisten %1 ermordet.</German>
+      <Original>%2 has murdered the unarmed civilian %1</Original>
+      <German>%2 hat den unbewaffneten Zivilisten %1 ermordet</German>
       <French>%1 a été tazé par %2</French>
       <Italian>%1 è stato taserato da %2</Italian>
       <Portuguese>%1 foi tazed por %2</Portuguese>

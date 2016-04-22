@@ -21,7 +21,11 @@ _projectile = SEL(_this,4);
 if(!isNull _source) then {
 	if(_source != _unit) then {
 		_curWep = currentWeapon _source;
-		if(_projectile == "B_9x21_Ball" && _curWep == "hgun_P07_snds_F") then {
+		
+		//
+		// tazer pistol
+		//
+		if(_curWep == "hgun_P07_snds_F") then {
 			private["_distance"];
 			_distance = 35;
 			
@@ -36,6 +40,29 @@ if(!isNull _source) then {
 						};
 					} else {
 						[_unit,_source] spawn life_fnc_tazed;
+					};
+				};
+			};
+		};
+
+		//
+		// Stun rifle
+		//
+		if(_curWep == "srifle_DMR_06_olive_F") then {
+			private["_distance"];
+			_distance = 350;
+			
+			_damage = false;
+			
+			if(_unit distance _source < _distance) then {
+				if(!life_istazed && !life_isknocked && !(_unit GVAR ["restrained",false])) then {
+					if (vehicle player != player) then {
+						if (typeOf (vehicle player) == "B_Quadbike_01_F") then {
+							player action ["Eject",vehicle player];
+							[_unit,_source] spawn life_fnc_stunned;
+						};
+					} else {
+						[_unit,_source] spawn life_fnc_stunned;
 					};
 				};
 			};

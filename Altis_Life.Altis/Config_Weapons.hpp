@@ -141,6 +141,7 @@ class WeaponShops {
         license = "";
         level[] = { "life_coplevel", "SCALAR", 2, "Du bist kein Wachtmeister!" };
         items[] = {
+			{ "srifle_DMR_06_olive_F", "Stun Rifle", 50000, 7500 },
             { "arifle_MX_Black_F", "", 35000, 7500 },
             { "SMG_02_ACO_F", "", 30000, -1 },
             { "HandGrenade_Stone", "Flashbang", 1700, -1 },
@@ -152,7 +153,8 @@ class WeaponShops {
         };
         mags[] = {
             { "30Rnd_65x39_caseless_mag", "", 130 },
-            { "30Rnd_9x21_Mag", "", 250 }
+            { "30Rnd_9x21_Mag", "", 250 },
+			{ "20Rnd_762x51_Mag", "", 250 }
         };
         accs[] = {
             { "acc_flashlight", "", 750 },
@@ -184,7 +186,8 @@ class WeaponShops {
 			{ "arifle_MXM_DMS_F", "MXM DMS", 101000, 5000 },
 			{ "arifle_MXM_RCO_pointer_snds_F", "MXM RCO SD", 120000, 5000 },
 			{ "arifle_MXM_SOS_pointer_F", "MXM MOS", 150000, 5000 },
-			{ "LMG_Mk200_LP_BI_F", "LMG_Mk200_LP_BI_F", 1500000, 5000 }
+			{ "LMG_Mk200_LP_BI_F", "LMG_Mk200_LP_BI_F", 1500000, 5000 },
+			{ "srifle_EBR_MRCO_LP_BI_F", "Mk18 ABR", 900000, 5000 }
         };
         mags[] = {
             { "16Rnd_9x21_Mag", "", 25 },
@@ -194,11 +197,13 @@ class WeaponShops {
             { "30Rnd_65x39_caseless_mag", "", 100, -1 },
 			{ "30Rnd_65x39_caseless_mag_Tracer", "", 100, -1 },
 			{ "200Rnd_65x39_cased_Box", "", 100, -1 },
-			{ "200Rnd_65x39_cased_Box_Tracer", "", 100, -1 }
+			{ "200Rnd_65x39_cased_Box_Tracer", "", 100, -1 },
+			{ "20Rnd_762x51_Mag", "", 100, -1 }
         };
         accs[] = {
             { "optic_ACO_grn_smg", "", 950 },
-			{ "optic_KHS_hex", "", 20000 }
+			{ "optic_KHS_hex", "KHS hex", 20000 },
+			{ "optic_MRCO", "MRCO", 1500 }
         };
     };
 	
@@ -233,7 +238,8 @@ class WeaponShops {
         accs[] = {
             { "optic_Arco", "", 2500 },
             { "muzzle_snds_H", "", 2750 },
-			{ "optic_KHS_blk", "", 10000 }
+			{ "optic_KHS_blk", "KHS black", 10000 },
+			{ "optic_MRCO", "MRCO", 1500 }
         };
     };
 

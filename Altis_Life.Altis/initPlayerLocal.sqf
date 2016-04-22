@@ -29,30 +29,7 @@ if(hasInterface)then {
 	setTerrainGrid 50;
 	setViewDistance 800;
 	setObjectViewDistance [800,3];
-
-	//
-	// weather:fog
-	//
-	[] spawn {
-		while{true} do {
-			uiSleep 10;
-			200 setFog 0;
-			uiSleep 590;
-		};
-	};
-
-	//
-	// weather:rain
-	//
-	[] spawn {
-		while{true} do {
-			uiSleep 10;
-			200 setRain 0;
-			uiSleep 590;
-		};
-	};
 	
 	[] execVM "custom\scripts\statusbar.sqf";
-	[] execVM "custom\scripts\voiceControl.sqf";
 	[] execVM "custom\scripts\depleteVehicleFuel.sqf";
 };

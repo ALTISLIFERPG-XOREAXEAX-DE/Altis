@@ -9,7 +9,7 @@ class Life_Settings {
     save_civ_weapons = true; //Allow civilians to save weapons on them?
     save_virtualItems = true; //Save Virtual items (all sides)?
 	
-    save_playerStats = false; //Save food, water and damage (all sides)?
+    save_playerStats = true; //Save food, water and damage (all sides)?
     save_civ_position = false; //Save civilian location?
     save_civ_positionStrict = false; //Strip the player if possible combat-log?  WARNING: Server crashes and lack of reliable syncing can trigger this.
 
@@ -17,15 +17,17 @@ class Life_Settings {
     save_veh_virtualItems = true; //Save Virtual items for vehicles (all sides)?
     save_veh_gear = true; //Save Gear for vehicles (all sides)?
 	
-    save_veh_fuel = false; //Save Vehicle fuel state
-    save_veh_damage = false; //Save Vehicle Damage
+    save_veh_fuel = true; //Save Vehicle fuel state
+    save_veh_damage = true; //Save Vehicle Damage
 	
     save_veh_items[] = {
+		"money",
 		"pickaxe",
 		"fuelEmpty",
 		"fuelFull",
 		"spikeStrip",
 		"lockpick",
+		"zipties",
 		"defuseKit",
 		"storageSmall",
 		"storageBig",
