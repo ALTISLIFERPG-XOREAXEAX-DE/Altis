@@ -99,15 +99,11 @@ life_save_gear = [player] call life_fnc_fetchDeadGear;
 if(side _killer == west && playerSide != west) then {
 
 	if (currentWeapon player == "") then {
-		[getPlayerUID _killer,_killer GVAR ["realname",name _killer],"187"] remoteExecCall ["life_fnc_wantedAdd",RSERV];
 		[0,"STR_NOTF_Murdered",true,[profileName, _killer GVAR ["realname",name _killer]]] remoteExecCall ["life_fnc_broadcast",RCLIENT];
-		[_killer] call life_fnc_arrestAction;
 	};
 	
 	if (currentWeapon player in ["Binocular","Rangefinder"]) then {
-		[getPlayerUID _killer,_killer GVAR ["realname",name _killer],"187"] remoteExecCall ["life_fnc_wantedAdd",RSERV];
 		[0,"STR_NOTF_Murdered",true,[profileName, _killer GVAR ["realname",name _killer]]] remoteExecCall ["life_fnc_broadcast",RCLIENT];
-		[_killer] call life_fnc_arrestAction;
 	};
 
 	life_copRecieve = _killer;

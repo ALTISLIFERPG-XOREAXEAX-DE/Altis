@@ -129,7 +129,7 @@ if (isnil "IL_Variables") then
 	IL_Supported_Vehicles_MH9 = ["B_Heli_Light_01_F", "B_mas_mar_Heli_Light_01_F","B_Heli_Light_01_stripped_F"];
 	IL_Supported_Vehicles_C130J = ["C130J_Cargo", "C130J"];
 	IL_Supported_Vehicles_C17 = ["globemaster_c17_altus", "globemaster_c17_701", "globemaster_c17_703", "globemaster_c17_704", "globemaster_c17_705", "globemaster_c17_dover", "globemaster_c17_edwards", "globemaster_c17_Elmendorf", "globemaster_c17", "globemaster_c17_hickam", "globemaster_c17_IAF", "globemaster_c17_March", "globemaster_c17_mcchord", "globemaster_c17_McGuire", "globemaster_c17_Mississipi", "globemaster_c17_NATO", "globemaster_c17_natoPAPA", "globemaster_c17_Qatar", "globemaster_c17_RAAF", "globemaster_c17_ZZ172_RAF", "globemaster_c17_RCAF", "globemaster_c17_Stewart", "globemaster_c17_therock", "globemaster_c17_travis", "globemaster_c17_UAE", "globemaster_c17_wright_patt"];
-	IL_Supported_Vehicles_Abschlepp = ["B_Truck_01_mover_F"];
+	IL_Supported_Vehicles_Abschlepp = ["B_Truck_01_mover_F","O_Heli_Transport_04_F"];
 	IL_Supported_Vehicles_HEMTTCOV = ["B_Truck_01_covered_F"];
 	
 	IL_Supported_Vehicles_All = IL_Supported_Vehicles_Abschlepp + IL_Supported_Vehicles_HEMTTCOV + IL_Supported_Vehicles_C130J + IL_Supported_Vehicles_C17 + IL_Supported_Vehicles_MH9 + IL_Supported_Vehicles_MOHAWK + IL_Supported_Vehicles_KAMAZ + IL_Supported_Vehicles_TEMPEST + IL_Supported_Vehicles_HEMTT + IL_Supported_Vehicles_VAN + IL_Supported_Vehicles_OFFROAD + IL_Supported_Vehicles_CHINOOK;
@@ -151,7 +151,7 @@ if (isnil "IL_Variables") then
 	IL_Supported_SUV = ["C_SUV_01_F"];
 	IL_Supported_APC = ["B_APC_Tracked_01_CRV_F"];
 	IL_Supported_Gun = ["O_Boat_Armed_01_hmg_F"];
-	IL_Supported_MH9 = ["B_Heli_Light_01_F", "B_mas_mar_Heli_Light_01_F","B_Heli_Light_01_stripped_F","C_Heli_Light_01_civil_F","O_Heli_Transport_04_box_F","B_Heli_Transport_03_unarmed_F","I_Heli_Transport_02_F","O_Heli_Light_02_unarmed_F","B_Heli_Transport_01_F"];
+	IL_Supported_MH9 = ["B_Heli_Light_01_F", "B_mas_mar_Heli_Light_01_F","B_Heli_Light_01_stripped_F","C_Heli_Light_01_civil_F","O_Heli_Transport_04_box_F","O_Heli_Transport_04_F","B_Heli_Transport_03_unarmed_F","I_Heli_Transport_02_F","O_Heli_Light_02_unarmed_F","B_Heli_Transport_01_F","I_Heli_light_03_unarmed_F"];
 	IL_Supported_Hatchback = ["C_Hatchback_01_F", "C_Hatchback_01_sport_F"];
 	IL_Supported_Hummvee = ["rc_hmmwv", "HMMWV2", "HMMWV_M1035", "M1114_AGS_ACR", "HMMWV_M1151_M2", "HMMWV2_M2", "HMMWV2_MK19", "HMMWV2_TOW", "HMMWV", "HMMWV_M2", "HMMWV_MK19", "HMMWV_TOW"];
 	IL_Supported_Quadbike = ["C_Kart_01_Blu_F","C_Kart_01_Fuel_F","C_Kart_01_Vrana_F","C_Kart_01_Red_F","I_Quadbike_01_F", "C_Quadbike_01_F", "O_Quadbike_01_F", "B_G_Quadbike_01_F", "B_Quadbike_01_F", "CAF_Quadbike_OD", "CAF_Quadbike_AR", "Marinir_Quadbike_01_FG", "B_mas_mar_Quadbike_01_F"];

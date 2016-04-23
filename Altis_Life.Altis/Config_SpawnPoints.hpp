@@ -65,7 +65,7 @@ class CfgSpawnPoints {
         };
 		
         class DHS001 {
-            displayName = "DHS Base SP1";
+            displayName = "SEK Base SP1";
             spawnMarker = "dhs_spawn_001";
             icon = "\a3\ui_f\data\map\MapControl\bunker_ca.paa";
             license = "dhs";
@@ -73,8 +73,24 @@ class CfgSpawnPoints {
         };
 		
         class DHS002 {
-            displayName = "DHS Base SP2";
+            displayName = "SEK Base SP2";
             spawnMarker = "dhs_spawn_002";
+            icon = "\a3\ui_f\data\map\MapControl\bunker_ca.paa";
+            license = "dhs";
+            level[] = { "", "", -1 };
+        };
+		
+        class DHS003 {
+            displayName = "Atsalis Base";
+            spawnMarker = "dhs_spawn_003";
+            icon = "\a3\ui_f\data\map\MapControl\bunker_ca.paa";
+            license = "dhs";
+            level[] = { "", "", -1 };
+        };
+		
+        class DHS004 {
+            displayName = "Atsalis Helipad";
+            spawnMarker = "dhs_spawn_004";
             icon = "\a3\ui_f\data\map\MapControl\bunker_ca.paa";
             license = "dhs";
             level[] = { "", "", -1 };

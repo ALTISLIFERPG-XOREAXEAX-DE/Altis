@@ -102,18 +102,21 @@ switch (_code) do {
 		};
 
 		//
+		// disabled because of cops doing sound spamming while restrained.
+		//
 		// H Taste fuer Polizei
 		//
-		if (playerSide == west) then {
-			if (vehicle player != player) then {
-				_veh = vehicle player;
-				if (typeOf _veh == "B_MRAP_01_F") then {
-					[_veh] remoteExec ["life_fnc_copSiren3",RCLIENT];
-				} else {
-					[_veh] remoteExec ["life_fnc_copSiren2",RCLIENT];
-				};
-			};
-		};
+		//if (playerSide == west) then {
+		//	if (vehicle player != player) then {
+		//		_veh = vehicle player;
+		//		if (typeOf _veh == "B_MRAP_01_F") then {
+		//			[_veh] remoteExec ["life_fnc_copSiren3",RCLIENT];
+		//		} else {
+		//			[_veh] remoteExec ["life_fnc_copSiren2",RCLIENT];
+		//		};
+		//	};
+		//};
+		//
 		
 		//
 		// H Taste fuer Zivilisten

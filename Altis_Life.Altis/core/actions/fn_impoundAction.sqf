@@ -30,7 +30,7 @@ _progress progressSetPosition 0.01;
 _cP = 0.01;
 	
 while{true} do {
-	sleep 6;
+	sleep 3;
 	_cP = _cP + 0.01;
 	_progress progressSetPosition _cP;
 	_pgText ctrlSetText format["%3 (%1%2)...",round(_cP * 100),"%",_upp];
