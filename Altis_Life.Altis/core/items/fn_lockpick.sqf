@@ -80,9 +80,9 @@ if(!_isVehicle) then {
 	_curTarget SVAR ["Escorting",false,true];
 	_curTarget SVAR ["transporting",false,true];
 } else {
-	if (playerSide == west) then {
+	if (playerSide in [west,independent]) then {
 		//
-		// cops always win the lottery
+		// cops and medics always win the lottery
 		//
 		_dice = 1;
 	} else {

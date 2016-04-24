@@ -4160,6 +4160,10 @@
 		<Original>Painkillers</Original>
 		<German>Schmerzmittel</German>
 	</Key>
+	<Key ID="STR_Item_Tranquilliser">
+		<Original>Tranquilliser</Original>
+		<German>Beruhigungsmittel</German>
+	</Key>
 	<Key ID="STR_Item_Zipties">
 		<Original>Zipties</Original>
 		<German>Kabelbinder</German>

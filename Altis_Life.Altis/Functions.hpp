@@ -234,6 +234,7 @@ class Life_Client_Core
 		class tazed {};
 		class stunned {};
 		class knockedOut {};
+		class sedatedOut {};
 		class knockoutAction {};
 		class robReceive {};
 		class robPerson {};
@@ -360,6 +361,7 @@ class Life_Client_Core
 		class placestorageBig {};
 		class placestorageSmall {};
 		class placedefinestorage {};
+		class sedate {};
 	};
 
 	class Dialog_Controls

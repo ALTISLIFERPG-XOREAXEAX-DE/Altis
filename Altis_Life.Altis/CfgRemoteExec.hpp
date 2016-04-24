@@ -20,6 +20,7 @@ class CfgRemoteExec {
         F(life_fnc_searchClient,CLIENT)
         F(TON_fnc_player_query,CLIENT)
         F(life_fnc_knockedOut,CLIENT)
+		F(life_fnc_sedatedOut,CLIENT)
         F(life_fnc_robReceive,CLIENT)
         F(life_fnc_tazeSound,CLIENT)
         F(life_fnc_copSiren,CLIENT)

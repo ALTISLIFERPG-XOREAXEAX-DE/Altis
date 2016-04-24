@@ -37,10 +37,20 @@ switch (true) do {
 		};
 	};
 
+	case (EQUAL(_item,"tranquilliser")): {
+		if(vehicle player == player) then {
+			if (cursorTarget isKindOf "Man") then {
+				if(([false,_item,1] call life_fnc_handleInv)) then {
+					[cursorTarget] spawn life_fnc_sedate;
+				};
+			};
+		};
+	};
+	
 	case (EQUAL(_item,"money")): {
 		if(vehicle player == player) then {
 			if(([false,_item,1] call life_fnc_handleInv)) then {
-				ADD(CASH,99900);
+				ADD(CASH,99999);
 			};
 		};
 	};
