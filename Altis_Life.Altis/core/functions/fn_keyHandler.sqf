@@ -170,20 +170,19 @@ switch (_code) do {
 						// clearItemCargoGlobal vehicle player;
 						// clearBackpackCargoGlobal vehicle player;
 						//
-						
-						vehicle player addItemCargoGlobal ["Medikit", 1];
 
+						vehicle player addItemCargoGlobal ["Medikit", 1];
 						vehicle player addItemCargoGlobal ["ToolKit", 1];
 
 						vehicle player addItemCargoGlobal ["NVGoggles", 1];
 						vehicle player addItemCargoGlobal ["ItemGPS", 1];
-						
+
 						vehicle player addItemCargoGlobal ["SmokeShellRed", 4];
 						vehicle player addItemCargoGlobal ["Chemlight_red", 4];
 						
-						vehicle player addItemCargoGlobal ["FirstAidKit", 1];
-	
-						vehicle player addBackpackCargoGlobal ["B_Kitbag_cbr", 1];
+						vehicle player addItemCargoGlobal ["U_B_Wetsuit", 1];
+						vehicle player addItemCargoGlobal ["V_RebreatherB", 1];
+						
 						vehicle player addBackpackCargoGlobal ["B_Carryall_oucamo", 1];
 					};
 				};
